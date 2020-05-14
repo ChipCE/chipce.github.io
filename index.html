@@ -1,0 +1,232 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+        <title>Snake oil demo</title>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/index.js"></script>
+
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="index.html"><i class="fa fa-bug"></i> Snake oil dev<small class="text-muted"> 1.0b</small></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBar"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/ChipTechno"><i class="fa fa-github"></i> Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block alertListOption %}disabled{% endblock %}" href="#"><i class="fa fa-calendar"></i> アラート管理</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+
+                </ul>
+            </div>
+        </nav>
+
+
+        <div class="container" id="progress">
+            <div class="row bs-wizard" style="border-bottom:0;">
+                
+                <div class="col-xs-3 bs-wizard-step active" id="step1-progress" step="1" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Printer Type</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Select your printer</div>
+                </div>
+                
+                <div class="col-2 bs-wizard-step disabled" id="step2-progress" step="2" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">ABL</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Auto bed leveling option</div>
+                </div>
+                
+                <div class="col-2 bs-wizard-step disabled" id="step3-progress" step="3" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Filament sensor</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Filament runout sensor option</div>
+                </div>
+                
+                <div class="col-2 bs-wizard-step disabled" id="step4-progress" step="4" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Snake oil</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Snake oil option</div>
+                </div>
+
+                <div class="col-2 bs-wizard-step disabled" id="step5-progress" step="5" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Advance snake oil</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">1000% peformance boost option</div>
+                </div>
+
+                <div class="col-2 bs-wizard-step disabled" id="step5-progress" step="6" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Review</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Review your config</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-2 mb-5" id="config">
+            <div class="configStep row" id="configStep-1" step="1">
+                <div class="form-group col-12">
+                <label for="printerType" class="text-primary"><i class="fa fa-chevron-down"></i> Printer Type</label>
+                <select class="custom-select" name="printerType" id="printerType">
+                    <option value="CR10" selected="selected">CR10</option>
+                    <option value="CR10_MINI">CR10_MINI</option>
+                    <option value="CR10_S4">CR10_S4</option>
+                    <option value="CR10_S5">CR10_S5</option>
+                    <option value="CR10S">CR10S</option>
+                    <option value="CR10S_MINI">CR10S_MINI</option>
+                    <option value="CR10S_S4">CR10S_S4</option>
+                    <option value="CR10S_S5">CR10S_S5</option>
+                    <option value="CR20">CR20</option>
+                    <option value="ENDER2">ENDER2</option>
+                    <option value="ENDER3">ENDER3</option>
+                    <option value="ENDER5">ENDER5</option>
+                    <option value="ENDER5_PLUS">ENDER5_PLUS</option>
+                    <option value="SOVOL_SV01">SOVOL_SV01</option>
+                </select>
+                <p class="text-muted"><i class="fa fa-info-circle"></i> Select your printer model</p>
+                </div>
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block disabled" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Srevious step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="configStep-2" step="2">
+                <div class="form-group col-12">
+                    <label for="abl-type" class="text-primary"><i class="fa fa-chevron-down"></i> ABL Type</label>
+                    <select class="custom-select" name="abl-type" id="abl-type">
+                        <option value="None" selected="selected">None</option>
+                        <option value="EZABL">EZABL</option>
+                        <option value="BLTOUCH">BLTOUCH</option>
+                        <option value="MANUAL_MESH_LEVELING">MANUAL_MESH_LEVELING</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select the type of bed leveling you want to use. </p>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Srevious step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="configStep-3" step="3">
+                <div class="form-group col-12">
+                    <label for="filament-sensor-type" class="text-primary"><i class="fa fa-chevron-down"></i> Filament sensor Type</label>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> If your machine came stock with a filament sensor it will be enabled automatically. If you replaced your stock sensor with our EZOut or you added an EZOut enabling the EZOUTV2_ENABLE will override the Creality sensor if your machine had one.<br></p>
+                    <select class="custom-select" name="filament-sensor-type" id="filament-sensor-type">
+                        <option value="None" selected="selected">None</option>
+                        <option value="EZOUTV2_ENABLE">EZOUTV2_ENABLE</option>
+                        <option value="CR10S_STOCKFILAMENTSENSOR">CR10S_STOCKFILAMENTSENSOR</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Please refer to the EZBoard Documentation for correctly connecting each type of filament sensor.<br></p>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="MOUNTED_FILAMENT_SENSOR" name="MOUNTED_FILAMENT_SENSOR">
+                        <label class="form-check-label text-primary" for="MOUNTED_FILAMENT_SENSOR">MOUNTED_FILAMENT_SENSOR</label>
+                    </div>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> If you have a filament sensor that is physically mounted to the machine you can enable this option to set the unload length to 0 to prevent filament from backing up in the sensor.</p>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Srevious step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="configStep-4" step="4">
+                <div class="form-group col-12">
+                    <p>Some snake oil functions here</p>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Srevious step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="configStep-5" step="5">
+                <div class="form-group col-12">
+                    <p>Some snake oil functions here</p>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Srevious step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="configStep-6" step="6">
+                <div class="form-group col-12">
+                <label class="text-primary" for="configuration_h"><i class="fa fa-pencil-square-o"></i> Configuration.h</label>
+                    <textarea id="configuration_h" class="form-control" rows="12" autocomplete="off" readonly></textarea>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> [Review of Configuration.h]</p>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Srevious step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-success btn-block" autocomplete="off"><i class="fa fa-check"></i> Submit</button>
+                </div>
+
+            </div>
+
+        </div>
+        
+        
+        
+        
+        
+	</div>
+</div>
+        </div>
+
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom py-3 py-md-3">
+        <div class="container text-center">
+        <small>Snake oil dev</small>
+        </div>
+    </footer>
+    </body>
+</html>
