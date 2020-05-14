@@ -63,10 +63,12 @@ function nextButtonHandle(ele)
 
 function generateConfig()
 {
-    let configStr = "...<Some other headers here>...";
+    let configStr = "...<Some other headers here>...\n";
     configStr = configStr + "#define " + $( "#printerType option:selected" ).text() + "\n";
-    configStr = configStr + "#define " + $( "#abl-type option:selected" ).text() + "\n";
-    configStr = configStr + "#define " + $( "#filament-sensor-type option:selected" ).text() + "\n";
+    if($( "#abl-type option:selected" ).text()!="NONE")
+        configStr = configStr + "#define " + $( "#abl-type option:selected" ).text() + "\n";
+    if($( "#filament-sensor-type option:selected" ).text()!="NONE")
+        configStr = configStr + "#define " + $( "#filament-sensor-type option:selected" ).text() + "\n";
     if ($("#MOUNTED_FILAMENT_SENSOR").is(':checked'))
         configStr = configStr + "#define MOUNTED_FILAMENT_SENSOR\n"
 
