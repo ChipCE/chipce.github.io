@@ -42,96 +42,162 @@
             </div>
         </nav>
 
-
+        <!--  The top progress bar  -->
         <div class="container" id="progress">
             <div class="row bs-wizard" style="border-bottom:0;">
                 
-                <div class="col-xs-3 bs-wizard-step active" id="step1-progress" step="1" onclick="onProgressButtonClicked(this);">
-                  <div class="text-center bs-wizard-stepnum">Printer Type</div>
+                <div class="col-1 bs-wizard-step active" id="progress-bar-1" step="1" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Basic</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Select your printer</div>
+                  <div class="bs-wizard-info text-center">Basic setting</div>
                 </div>
                 
-                <div class="col-2 bs-wizard-step disabled" id="step2-progress" step="2" onclick="onProgressButtonClicked(this);">
+                <div class="col-2 bs-wizard-step disabled" id="progress-bar-2" step="2" onclick="onProgressButtonClicked(this);">
                   <div class="text-center bs-wizard-stepnum">ABL</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Auto bed leveling option</div>
+                  <div class="bs-wizard-info text-center">Auto bed leveling setting</div>
                 </div>
                 
-                <div class="col-2 bs-wizard-step disabled" id="step3-progress" step="3" onclick="onProgressButtonClicked(this);">
+                <div class="col-2 bs-wizard-step disabled" id="progress-bar-3" step="3" onclick="onProgressButtonClicked(this);">
                   <div class="text-center bs-wizard-stepnum">Filament sensor</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Filament runout sensor option</div>
+                  <div class="bs-wizard-info text-center">Filament runout setting</div>
                 </div>
                 
-                <div class="col-2 bs-wizard-step disabled" id="step4-progress" step="4" onclick="onProgressButtonClicked(this);">
-                  <div class="text-center bs-wizard-stepnum">Snake oil</div>
+                <div class="col-2 bs-wizard-step disabled" id="progress-bar-4" step="4" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Thermal</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Snake oil option</div>
+                  <div class="bs-wizard-info text-center">Thermistors and heaters setting</div>
                 </div>
 
-                <div class="col-2 bs-wizard-step disabled" id="step5-progress" step="5" onclick="onProgressButtonClicked(this);">
-                  <div class="text-center bs-wizard-stepnum">Advance snake oil</div>
+                <div class="col-2 bs-wizard-step disabled" id="progress-bar-5" step="5" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Motors</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">1000% peformance boost option</div>
+                  <div class="bs-wizard-info text-center">Motor direction and Etep</div>
                 </div>
 
-                <div class="col-2 bs-wizard-step disabled" id="step6-progress" step="6" onclick="onProgressButtonClicked(this);">
+                <div class="col-2 bs-wizard-step disabled" id="progress-bar-6" step="6" onclick="onProgressButtonClicked(this);">
+                  <div class="text-center bs-wizard-stepnum">Misc</div>
+                  <div class="progress"><div class="progress-bar"></div></div>
+                  <a href="#" class="bs-wizard-dot"></a>
+                  <div class="bs-wizard-info text-center">Miscellaneous</div>
+                </div>
+
+                <div class="col-1 bs-wizard-step disabled" id="progress-bar-7" step="7" onclick="onProgressButtonClicked(this);">
                   <div class="text-center bs-wizard-stepnum">Review</div>
                   <div class="progress"><div class="progress-bar"></div></div>
                   <a href="#" class="bs-wizard-dot"></a>
-                  <div class="bs-wizard-info text-center">Review your config</div>
+                  <div class="bs-wizard-info text-center">Check and submit</div>
                 </div>
             </div>
         </div>
 
         <div class="container mt-2 mb-5" id="config">
-            <div class="configStep row" id="configStep-1" step="1">
-                <div class="form-group col-12">
-                <label for="printerType" class="text-primary"><i class="fa fa-chevron-down"></i> Printer Type</label>
-                <select class="custom-select" name="printerType" id="printerType">
-                    <option value="CR10" selected="selected">CR10</option>
-                    <option value="CR10_MINI">CR10_MINI</option>
-                    <option value="CR10_S4">CR10_S4</option>
-                    <option value="CR10_S5">CR10_S5</option>
-                    <option value="CR10S">CR10S</option>
-                    <option value="CR10S_MINI">CR10S_MINI</option>
-                    <option value="CR10S_S4">CR10S_S4</option>
-                    <option value="CR10S_S5">CR10S_S5</option>
-                    <option value="CR20">CR20</option>
-                    <option value="ENDER2">ENDER2</option>
-                    <option value="ENDER3">ENDER3</option>
-                    <option value="ENDER5">ENDER5</option>
-                    <option value="ENDER5_PLUS">ENDER5_PLUS</option>
-                    <option value="SOVOL_SV01">SOVOL_SV01</option>
-                </select>
-                <p class="text-muted"><i class="fa fa-info-circle"></i> Select your printer model</p>
-                </div>
-                <div class="form-group col-6">
-                    <button type="button" class="btn btn-dark btn-block disabled" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
-                </div>
+            <div class="configStep row" id="config-step-1" step="1">
+                <!-- start of basic config  -->
 
-                <div class="form-group col-6">
-                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
-                </div>
-            </div>
-
-            <div class="configStep row d-none" id="configStep-2" step="2">
-                <div class="form-group col-12">
-                    <label for="abl-type" class="text-primary"><i class="fa fa-chevron-down"></i> ABL Type</label>
-                    <select class="custom-select" name="abl-type" id="abl-type">
-                        <option value="None" selected="selected">None</option>
-                        <option value="EZABL">EZABL</option>
-                        <option value="BLTOUCH">BLTOUCH</option>
-                        <option value="MANUAL_MESH_LEVELING">MANUAL_MESH_LEVELING</option>
+                <div class="config-option-warpper col-12">
+                    <label for="printerType" class="text-primary"><i class="fa fa-chevron-down"></i> Printer Type</label>
+                    <select class="custom-select config-option" name="printerType" autocomplete="off" id="printerType">
+                        <option value="CR10" selected="selected">CR10</option>
+                        <option value="CR10_MINI">CR10_MINI</option>
+                        <option value="CR10_S4">CR10_S4</option>
+                        <option value="CR10_S5">CR10_S5</option>
+                        <option value="CR10S">CR10S</option>
+                        <option value="CR10S_MINI">CR10S_MINI</option>
+                        <option value="CR10S_S4">CR10S_S4</option>
+                        <option value="CR10S_S5">CR10S_S5</option>
+                        <option value="CR20">CR20</option>
+                        <option value="ENDER2">ENDER2</option>
+                        <option value="ENDER3">ENDER3</option>
+                        <option value="ENDER5">ENDER5</option>
+                        <option value="ENDER5_PLUS">ENDER5_PLUS</option>
+                        <option value="SOVOL_SV01">SOVOL_SV01</option>
                     </select>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select the type of bed leveling you want to use. </p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select your printer model</p>
                 </div>
+
+                <div class="config-option-warpper-sub col-12 d-none" parent="printerType" targetValue="ENDER3">
+                    <label for="ender3_sub" class="text-primary"><i class="fa fa-tags"></i> E3sub</label>
+                    <input type="text" class="form-control config-option-sub" id="ender3_sub" placeholder="Tags" name="comment" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> ender3 sub option</p>
+                </div>
+
+                <div class="config-option-warpper-sub col-12 d-none" parent="printerType" targetValue="ENDER3">
+                    <label for="ender3_sub2" class="text-primary"><i class="fa fa-tags"></i> E3sub</label>
+                    <input type="text" class="form-control config-option-sub" id="ender3_sub2" placeholder="Tags" name="comment" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> ender3.2 sub option</p>
+                </div>
+
+                <div class="config-option-warpper col-12">
+                    <label for="commentInputFiled" class="text-primary"><i class="fa fa-tags"></i> Tags</label>
+                    <input type="text" class="form-control config-option" id="commentInputFiled" placeholder="Tags" name="comment" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Assign tags to your config file so you can find it later with the search function.</p>
+                </div>
+
+                <div class="form-check config-option-warpper col-12">
+                    <input class="form-check-input config-option" type="checkbox" value="" id="FINE_BABYSTEPPING" name="FINE_BABYSTEPPING" autocomplete="off">
+                    <label class="form-check-label text-primary" for="FINE_BABYSTEPPING">FINE_BABYSTEPPING</label>
+                    
+                </div>
+                <p class="text-muted"><i class="fa fa-info-circle"></i> If you want a more granular control over the babystepping enable this option. This will make the adjustment finer than the standard setting.</p>
+
+                <div class="config-option-warpper-sub col-12 d-none" parent="FINE_BABYSTEPPING" targetValue="true">
+                    <label for="baby_step_sub" class="text-primary"><i class="fa fa-tags"></i> BS sub</label>
+                    <input type="text" class="form-control config-option-sub" id="baby_step_sub" placeholder="Tags" name="comment" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> FINE_BABYSTEPPING sub option</p>
+                </div>
+
+                <div class="config-option-warpper-sub col-12 d-none" parent="FINE_BABYSTEPPING" targetValue="true">
+                    <input class="form-check-input config-option-sub" type="checkbox" value="" id="DRAF_BABYSTEPPING" name="DRAF_BABYSTEPPING" autocomplete="off">
+                    <label class="form-check-label text-primary" for="DRAF_BABYSTEPPING">DRAF_BABYSTEPPING</label>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> meh</p>
+                </div>
+
+                <!-- end of basic config  -->
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block disabled d-none" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
+                </div>
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="config-step-2" step="2">
+                <!-- start of basic config  -->
+
+                <!-- end of basic config  -->
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="config-step-3" step="3">
+                <!-- start of basic config  -->
+
+                <!-- end of basic config  -->
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
+                </div>
+
+                <div class="form-group col-6">
+                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
+                </div>
+            </div>
+
+            <div class="configStep row d-none" id="config-step-4" step="4">
+                <!-- start of basic config  -->
+
+                <!-- end of basic config  -->
 
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
@@ -142,22 +208,10 @@
                 </div>
             </div>
 
-            <div class="configStep row d-none" id="configStep-3" step="3">
-                <div class="form-group col-12">
-                    <label for="filament-sensor-type" class="text-primary"><i class="fa fa-chevron-down"></i> Filament sensor Type</label>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> If your machine came stock with a filament sensor it will be enabled automatically. If you replaced your stock sensor with our EZOut or you added an EZOut enabling the EZOUTV2_ENABLE will override the Creality sensor if your machine had one.<br></p>
-                    <select class="custom-select" name="filament-sensor-type" id="filament-sensor-type">
-                        <option value="None" selected="selected">None</option>
-                        <option value="EZOUTV2_ENABLE">EZOUTV2_ENABLE</option>
-                        <option value="CR10S_STOCKFILAMENTSENSOR">CR10S_STOCKFILAMENTSENSOR</option>
-                    </select>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Please refer to the EZBoard Documentation for correctly connecting each type of filament sensor.<br></p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="MOUNTED_FILAMENT_SENSOR" name="MOUNTED_FILAMENT_SENSOR">
-                        <label class="form-check-label text-primary" for="MOUNTED_FILAMENT_SENSOR">MOUNTED_FILAMENT_SENSOR</label>
-                    </div>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> If you have a filament sensor that is physically mounted to the machine you can enable this option to set the unload length to 0 to prevent filament from backing up in the sensor.</p>
-                </div>
+            <div class="configStep row d-none" id="config-step-5" step="5">
+                <!-- start of basic config  -->
+
+                <!-- end of basic config  -->
 
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
@@ -168,11 +222,10 @@
                 </div>
             </div>
 
-            <div class="configStep row d-none" id="configStep-4" step="4">
-                <div class="form-group col-12">
-                    <p>Some snake oil functions here</p>
-                </div>
+            <div class="configStep row d-none" id="config-step-6" step="6">
+                <!-- start of basic config  -->
 
+                <!-- end of basic config  -->
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
                 </div>
@@ -182,33 +235,17 @@
                 </div>
             </div>
 
-            <div class="configStep row d-none" id="configStep-5" step="5">
-                <div class="form-group col-12">
-                    <p>Some snake oil functions here</p>
-                </div>
+            <div class="configStep row d-none" id="config-step-7" step="7">
+                <!-- start of basic config  -->
+
+                <!-- end of basic config  -->
 
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
                 </div>
 
                 <div class="form-group col-6">
-                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="nextButtonHandle(this);"><i class="fa fa-chevron-right"></i> Next step</button>
-                </div>
-            </div>
-
-            <div class="configStep row d-none" id="configStep-6" step="6">
-                <div class="form-group col-12">
-                <label class="text-primary" for="configuration_h"><i class="fa fa-pencil-square-o"></i> Configuration.h</label>
-                    <textarea id="configuration_h" class="form-control" rows="12" autocomplete="off" readonly></textarea>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> [Review of Configuration.h]</p>
-                </div>
-
-                <div class="form-group col-6">
-                    <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
-                </div>
-
-                <div class="form-group col-6">
-                    <button type="button" class="btn btn-success btn-block" autocomplete="off"><i class="fa fa-check"></i> Submit</button>
+                    <button type="button" class="btn btn-success btn-block" autocomplete="off" onclick="submitButtonHandle();"><i class="fa fa-check"></i> Submit</button>
                 </div>
 
             </div>

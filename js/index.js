@@ -1,5 +1,24 @@
 // Onload
 $( document ).ready(function() {
+    $( ".config-option" ).change(function(event) {
+        // select
+        if($( event.delegateTarget ).prop("type") == "select-one")
+        {
+            let targetValue = $( event.delegateTarget ).val();
+            console.log("search for " + targetValue)
+            // first, hide all sub option
+            $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"]').addClass("d-none");
+            // then show the matched target only
+            $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"][targetValue="' + targetValue + '"]').removeClass("d-none");
+        }
+        //check box
+        else if($( event.delegateTarget ).prop("type") == "checkbox")
+        {
+            let targetValue = $( event.delegateTarget ).prop('checked');
+            $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"]').addClass("d-none");
+            $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"][targetValue="' + targetValue + '"]').removeClass("d-none");
+        }
+    });
    
 });
 
@@ -12,21 +31,13 @@ function onProgressButtonClicked(ele)
     $(".bs-wizard-step").removeClass("complete");
 
     $(".configStep").addClass("d-none");
-    $("#configStep-" + selectedStep).removeClass("d-none");
-    
-    // let selectedStep = $(ele).attr( 'step' );
-    // // set lower step to completed
-    // for (let i = 0 ;i <selectedStep;i++)
-    // {
-    //     $("#step"+i+"-progress").removeClass("disabled");
-    //     $("#step"+i+"-progress").removeClass("active");
-    //     $("#step"+i+"-progress").addClass("complete");
-    // }
-    // set current step to active
+    $("#config-step-" + selectedStep).removeClass("d-none");
+
+
     $(ele).removeClass("disabled");
     $(ele).addClass("complete");
 
-    if(selectedStep == 6)
+    if(selectedStep == 7)
         generateConfig();
 }
 
@@ -36,14 +47,15 @@ function switchToStep(step)
     $(".bs-wizard-step").removeClass("active");
     $(".bs-wizard-step").removeClass("complete");
 
+    // show config  step gropup
     $(".configStep").addClass("d-none");
-    $("#configStep-" + step).removeClass("d-none");
+    $("#config-step-" + step).removeClass("d-none");
     
-    // set current step to active step2-progress
-    $("#step" + step + "-progress").removeClass("disabled");
-    $("#step" + step + "-progress").addClass("complete");
+    // set current step progress to active
+    $("#progress-bar-" + step).removeClass("disabled");
+    $("#progress-bar-" + step).addClass("complete");
 
-    if(step == 6)
+    if(step == 7)
         generateConfig();
 }
 
@@ -57,21 +69,87 @@ function prevButtonHandle(ele){
 function nextButtonHandle(ele)
 {
     let currentStep = $(ele).closest('.configStep').attr("step");
-    if (currentStep <6 )
+    if (currentStep < 7)
         switchToStep(parseInt(currentStep)+1);
 }
 
 function generateConfig()
 {
-    let configStr = "...<Some other headers here>...\n";
-    configStr = configStr + "#define " + $( "#printerType option:selected" ).text() + "\n";
-    if($( "#abl-type option:selected" ).text()!="None")
-        configStr = configStr + "#define " + $( "#abl-type option:selected" ).text() + "\n";
-    if($( "#filament-sensor-type option:selected" ).text()!="None")
-        configStr = configStr + "#define " + $( "#filament-sensor-type option:selected" ).text() + "\n";
-    if ($("#MOUNTED_FILAMENT_SENSOR").is(':checked'))
-        configStr = configStr + "#define MOUNTED_FILAMENT_SENSOR\n"
+    getConfigStr();
+    return false;
+}
 
-    // set
-    $("#configuration_h").val(configStr);
+function getSubConfigArg(parentId,targetValue)
+{
+    let subConfigStr = "";
+    // console.log("sub");
+    subConfigList = $('.config-option-warpper-sub[parent="' + parentId + '"][targetValue="' + targetValue + '"]').find(".config-option-sub");
+    // console.log(subConfigList);
+    $(subConfigList.get()).each(function () {
+        if ($(this).prop('type') == "select-one")
+        {
+            subConfigStr = subConfigStr + "#define " + $(this).val() + "\n";
+        }
+        else if ($(this).prop('type') == "checkbox")
+        {
+            if ($(this).prop('checked'))
+            {
+                subConfigStr = subConfigStr + "#define " + $(this).prop("id") + "\n";
+            }
+        }
+        else if ($(this).prop('type') == "text" || $(this).prop('type') == "number")
+        {
+            if ( $(this).val() != "")
+            {
+                subConfigStr = subConfigStr + "#define " + $(this).prop("id") + " " + $(this).val() + "\n";
+            }
+        }
+    });
+    // console.log(subConfigStr);
+    return subConfigStr;
+
+}
+
+function submitButtonHandle()
+{
+    console.log(getConfigStr());
+}
+
+function getConfigStr()
+{
+    let configStr = "";
+    let wrapperList = $(".config-option");
+    $(wrapperList.get()).each(function () {
+        if ($(this).prop('type') == "select-one")
+        {
+            configStr = configStr + "#define " + $(this).val() + "\n";
+
+            // also search for its sub 
+            let subConfigStr = getSubConfigArg($(this).prop("id"),$(this).val());
+            if(subConfigStr != "")
+            configStr = configStr + subConfigStr;
+        }
+        else if ($(this).prop('type') == "checkbox")
+        {
+            if ($(this).prop('checked'))
+            {
+                configStr = configStr + "#define " + $(this).prop("id") + "\n";
+                // also search for its sub 
+                let subConfigStr = getSubConfigArg($(this).prop("id"),"true");
+                if(subConfigStr != "")
+                    configStr = configStr + subConfigStr;
+            }
+        }
+        else if ($(this).prop('type') == "text" || $(this).prop('type') == "number")
+        {
+            if ( $(this).val() != "")
+            {
+                configStr = configStr + "#define " + $(this).prop("id") + " " + $(this).val() + "\n";
+            }
+            // no sub config support for this form type
+        }
+    });
+
+    console.log(configStr);
+    return configStr;
 }
