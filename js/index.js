@@ -9,7 +9,13 @@ $( document ).ready(function() {
             // first, hide all sub option
             $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"]').addClass("d-none");
             // then show the matched target only
-            $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"][targetValue="' + targetValue + '"]').removeClass("d-none");
+            // $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"][targetValue="' + targetValue + '"]').removeClass("d-none");
+            let subConfigList = $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"]');
+            $(subConfigList.get()).each(function () {
+                if(matchedTargetValue(targetValue,$(this).attr('targetValue')))
+                    $(this).removeClass("d-none");
+            });
+
         }
         //check box
         else if($( event.delegateTarget ).prop("type") == "checkbox")
@@ -19,6 +25,8 @@ $( document ).ready(function() {
             $('.config-option-warpper-sub[parent="' + $( event.delegateTarget ).prop('id') + '"][targetValue="' + targetValue + '"]').removeClass("d-none");
         }
     });
+
+    reloadTarget();
    
 });
 
@@ -79,29 +87,40 @@ function generateConfig()
     return false;
 }
 
+function matchedTargetValue(targetValue,targetValueList)
+{
+    return targetValueList.split(",").includes(targetValue);
+}
+
 function getSubConfigArg(parentId,targetValue)
 {
     let subConfigStr = "";
     // console.log("sub");
-    subConfigList = $('.config-option-warpper-sub[parent="' + parentId + '"][targetValue="' + targetValue + '"]').find(".config-option-sub");
-    // console.log(subConfigList);
+    // subConfigList = $('.config-option-warpper-sub[parent="' + parentId + '"][targetValue="' + targetValue + '"]').find(".config-option-sub");
+    subConfigList = $('.config-option-warpper-sub[parent="' + parentId + '"]');
+    console.log(subConfigList);
     $(subConfigList.get()).each(function () {
-        if ($(this).prop('type') == "select-one")
+        console.log($(this).attr('targetValue'));
+        if(matchedTargetValue(targetValue,$(this).attr('targetValue')))
         {
-            subConfigStr = subConfigStr + "#define " + $(this).val() + "\n";
-        }
-        else if ($(this).prop('type') == "checkbox")
-        {
-            if ($(this).prop('checked'))
+            let subConfig = $(this).find(".config-option-sub");
+            if (subConfig.prop('type') == "select-one")
             {
-                subConfigStr = subConfigStr + "#define " + $(this).prop("id") + "\n";
+                subConfigStr = subConfigStr + "#define " + $(subConfig).val() + "\n";
             }
-        }
-        else if ($(this).prop('type') == "text" || $(this).prop('type') == "number")
-        {
-            if ( $(this).val() != "")
+            else if ($(subConfig).prop('type') == "checkbox")
             {
-                subConfigStr = subConfigStr + "#define " + $(this).prop("id") + " " + $(this).val() + "\n";
+                if ($(subConfig).prop('checked'))
+                {
+                    subConfigStr = subConfigStr + "#define " + $(subConfig).prop("id") + "\n";
+                }
+            }
+            else if ($(subConfig).prop('type') == "text" || $(subConfig).prop('type') == "number")
+            {
+                if ( $(subConfig).val() != "")
+                {
+                    subConfigStr = subConfigStr + "#define " + $(subConfig).prop("id") + " " + $(subConfig).val() + "\n";
+                }
             }
         }
     });
@@ -152,4 +171,32 @@ function getConfigStr()
 
     console.log(configStr);
     return configStr;
+}
+
+function checkInputError()
+{
+    return false;
+}
+
+function applyCompatibilityLayer()
+{
+    return false;
+}
+
+//show sub menu based on default target
+function reloadTarget()
+{
+    let configStr = "";
+    let wrapperList = $(".config-option");
+    $(wrapperList.get()).each(function () {
+        if ($(this).prop('type') == "select-one")
+            $(this).val($(this).val()).change();
+        else if ($(this).prop('type') == "checkbox")
+        {
+            if ($(this).prop('checked'))
+            {
+                $(this).attr('checked', 'checked').change();
+            }
+        }
+    });
 }

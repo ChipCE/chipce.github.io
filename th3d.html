@@ -101,63 +101,15 @@
             <div class="configStep row" id="config-step-1" step="1">
                 <!-- start of basic config  -->
 
-                <div class="config-option-warpper col-12">
-                    <label for="printerType" class="text-primary"><i class="fa fa-chevron-down"></i> Printer Type</label>
-                    <select class="custom-select config-option" name="printerType" autocomplete="off" id="printerType">
-                        <option value="CR10" selected="selected">CR10</option>
-                        <option value="CR10_MINI">CR10_MINI</option>
-                        <option value="CR10_S4">CR10_S4</option>
-                        <option value="CR10_S5">CR10_S5</option>
-                        <option value="CR10S">CR10S</option>
-                        <option value="CR10S_MINI">CR10S_MINI</option>
-                        <option value="CR10S_S4">CR10S_S4</option>
-                        <option value="CR10S_S5">CR10S_S5</option>
-                        <option value="CR20">CR20</option>
-                        <option value="ENDER2">ENDER2</option>
-                        <option value="ENDER3">ENDER3</option>
-                        <option value="ENDER5">ENDER5</option>
-                        <option value="ENDER5_PLUS">ENDER5_PLUS</option>
-                        <option value="SOVOL_SV01">SOVOL_SV01</option>
-                    </select>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select your printer model</p>
-                </div>
+                <div class="config-option-warpper col-12"><label for="printerType" class="text-primary"><i class="fa fa-chevron-down"></i> Printer Type</label><select class="custom-select config-option" name="printerType" autocomplete="off" id="printerType"><option value="P1" selected="selected">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="P4">P4</option><option value="P5">P5</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> Select printer type</p></div>
 
-                <div class="config-option-warpper-sub col-12 d-none" parent="printerType" targetValue="ENDER3">
-                    <label for="ender3_sub" class="text-primary"><i class="fa fa-tags"></i> E3sub</label>
-                    <input type="text" class="form-control config-option-sub" id="ender3_sub" placeholder="Tags" name="comment" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> ender3 sub option</p>
-                </div>
-
-                <div class="config-option-warpper-sub col-12 d-none" parent="printerType" targetValue="ENDER3">
-                    <label for="ender3_sub2" class="text-primary"><i class="fa fa-tags"></i> E3sub</label>
-                    <input type="text" class="form-control config-option-sub" id="ender3_sub2" placeholder="Tags" name="comment" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> ender3.2 sub option</p>
-                </div>
+                <div class="config-option-warpper-sub col-12 d-none" parent="printerType" targetValue="P1,P3,P5"><label for="odd" class="text-primary"><i class="fa fa-tags"></i> P odd</label><input type="text" class="form-control config-option-sub" id="odd" placeholder="" name="odd"  autocomplete="off" value="12" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Onsly show when odd number showed</p></div>
 
                 <div class="config-option-warpper col-12">
-                    <label for="commentInputFiled" class="text-primary"><i class="fa fa-tags"></i> Tags</label>
-                    <input type="text" class="form-control config-option" id="commentInputFiled" placeholder="Tags" name="comment" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Assign tags to your config file so you can find it later with the search function.</p>
-                </div>
+                <input class="form-check-input config-option" type="checkbox" value="" id="ENABLE_ADV" name="ENABLE_ADV" autocomplete="off"> <label class="form-check-label text-primary" for="ENABLE_ADV">Enable advance setting</label><p class="text-muted"><i class="fa fa-info-circle"></i> Show advance setting</p></div>
 
-                <div class="form-check config-option-warpper col-12">
-                    <input class="form-check-input config-option" type="checkbox" value="" id="FINE_BABYSTEPPING" name="FINE_BABYSTEPPING" autocomplete="off">
-                    <label class="form-check-label text-primary" for="FINE_BABYSTEPPING">FINE_BABYSTEPPING</label>
-                    
-                </div>
-                <p class="text-muted"><i class="fa fa-info-circle"></i> If you want a more granular control over the babystepping enable this option. This will make the adjustment finer than the standard setting.</p>
+                <div class="config-option-warpper-sub col-12 d-none" parent="ENABLE_ADV" targetValue="true"><label for="advType" class="text-primary"><i class="fa fa-chevron-down"></i> adv sub menu</label><select class="custom-select config-option-sub" name="advType" autocomplete="off" id="advType"><option value="a" selected="selected">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> only showed when adv is enabled</p></div>
 
-                <div class="config-option-warpper-sub col-12 d-none" parent="FINE_BABYSTEPPING" targetValue="true">
-                    <label for="baby_step_sub" class="text-primary"><i class="fa fa-tags"></i> BS sub</label>
-                    <input type="text" class="form-control config-option-sub" id="baby_step_sub" placeholder="Tags" name="comment" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> FINE_BABYSTEPPING sub option</p>
-                </div>
-
-                <div class="config-option-warpper-sub col-12 d-none" parent="FINE_BABYSTEPPING" targetValue="true">
-                    <input class="form-check-input config-option-sub" type="checkbox" value="" id="DRAF_BABYSTEPPING" name="DRAF_BABYSTEPPING" autocomplete="off">
-                    <label class="form-check-label text-primary" for="DRAF_BABYSTEPPING">DRAF_BABYSTEPPING</label>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> meh</p>
-                </div>
 
                 <!-- end of basic config  -->
                 <div class="form-group col-6">
@@ -251,11 +203,7 @@
             </div>
 
         </div>
-        
-        
-        
-        
-        
+
 	</div>
 </div>
         </div>

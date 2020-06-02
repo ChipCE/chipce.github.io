@@ -1,0 +1,213 @@
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+
+        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
+        <title>Gero</title>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/gero.js"></script>
+
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="index.html"><i class="fa fa-bug"></i> Snake oil dev<small class="text-muted"> 1.0b</small></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBar"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="topNavBar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/ChipTechno"><i class="fa fa-github"></i> Git</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% block alertListOption %}disabled{% endblock %}" href="#"><i class="fa fa-terminal"></i> Command</a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+
+                </ul>
+            </div>
+        </nav>
+
+        
+
+        <div class="container mt-2 mb-5" id="gero">
+            <div class="row" id="selector">
+                <div class="col-12">
+                    <label for="configLevel" class="text-primary"><i class="fa fa-chevron-down"></i> Config level</label>
+                    <select class="custom-select config-option" name="configLevel" autocomplete="off" id="configLevel" onchange="configLevlelHandle();">
+                        <option value="main" selected="selected">Main</option>
+                        <option value="sub">Sub</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select config level.</p>
+                </div>
+            </div>
+
+            <div class="row" id="main">
+                <div class="col-12">
+                    <label for="mainConfigType" class="text-primary"><i class="fa fa-th-list"></i> Config type</label>
+                    <select class="custom-select config-option" name="mainConfigType" autocomplete="off" id="mainConfigType"  onchange="configTypeHandle(this);">
+                        <option value="select" selected="selected">Dropdown select</option>
+                        <option value="checkbox">Checkbox</option>
+                        <option value="text">text</option>
+                        <option value="number">number</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select config Type.</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="mainConfigDisplay" class="text-primary"><i class="fa fa-tag"></i> Display text</label>
+                    <input type="text" class="form-control" id="mainConfigDisplay" placeholder="" name="mainConfigDisplay" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> This will be displayed as contig option name in web UI</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="mainConfigDecsription" class="text-primary"><i class="fa fa-hashtag"></i> Config description</label>
+                    <input type="text" class="form-control" id="mainConfigDecsription" placeholder="" name="mainConfigDecsription" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> This description will be displayed under config option.</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="mainConfigName" class="text-primary"><i class="fa fa-hashtag"></i> Config id</label>
+                    <input type="text" class="form-control" id="mainConfigName" placeholder="" name="mainConfigName" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Config id.</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> For dropdown select type, config id can be any unique String. (Ex : "printerType")</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> For Checkbox,text or number type, config id must be matched with the #define value (ex: "SNAKE_OIL" for #define SNAME_OIL)</p>
+                </div>
+
+                <div class="form-check col-12 d-none configRequire">
+                    <label for="mainNotNull" class="text-primary"><i class="fa fa-pencil-square-o"></i> Required</label>
+                    <select class="custom-select config-option" name="mainNotNull" autocomplete="off" id="mainNotNull">
+                        <option value="true" selected="selected">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> n/a</p>
+                </div>
+
+                <div class="col-12 d-none configDefault">
+                    <label for="mainDefaultValue" class="text-primary"><i class="fa fa-bookmark"></i> Default value</label>
+                    <input type="text" class="form-control" id="mainDefaultValue" placeholder="" name="mainDefaultValue" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Default value. "true"/"false"/[string]</p>
+                </div>
+
+                <div class="col-12 configArg">
+                    <label for="mainConfigArg" class="text-primary"><i class="fa fa-terminal"></i> Config args</label>
+                    <input type="text" class="form-control" id="mainConfigArg" placeholder="" name="mainConfigArg" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Selectable value (Ex: ENDER3,ENDER4,ENDER5) . The first value will be default</p>
+                </div>
+
+            </div>
+
+            <div class="row d-none" id="sub">
+                <div class="col-12">
+                    <label for="subConfigType" class="text-primary"><i class="fa fa-th-list"></i> Config type</label>
+                    <select class="custom-select config-option" name="subConfigType" autocomplete="off" id="subConfigType" onchange="configTypeHandle(this);">
+                        <option value="select" selected="selected">Dropdown select</option>
+                        <option value="checkbox">Checkbox</option>
+                        <option value="text">text</option>
+                        <option value="number">number</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select config Type.</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="targetConfig" class="text-primary"><i class="fa fa-crosshairs"></i> Target config</label>
+                    <input type="text" class="form-control" id="targetConfig" placeholder="" name="targetConfig" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Name of the parent config, this config will be showed when the parent config is selected or value is matched</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="targetValue" class="text-primary"><i class="fa fa-flag"></i> Target value</label>
+                    <input type="text" class="form-control" id="targetValue" placeholder="" name="targetValue" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> The value of target config. (Ex: ENDER_3,ENDER_4 will show the config when the parent config value is ENDER_3 or ENDER_4). For parent config type is checkbox, use "true" without the qoute.</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="subConfigName" class="text-primary"><i class="fa fa-hashtag"></i> Config id</label>
+                    <input type="text" class="form-control" id="subConfigName" placeholder="" name="subConfigName" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Config id.</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> For dropdown select type, config id can be any unique String. (Ex : "printerType")</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> For Checkbox,text or number type, config id must be matched with the #define value (ex: "SNAKE_OIL" for #define SNAME_OIL)</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="subConfigDisplay" class="text-primary"><i class="fa fa-tag"></i> Display text</label>
+                    <input type="text" class="form-control" id="subConfigDisplay" placeholder="" name="subConfigDisplay" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> This will be displayed as contig option name in web UI</p>
+                </div>
+
+                <div class="col-12">
+                    <label for="subConfigDecsription" class="text-primary"><i class="fa fa-hashtag"></i> Config description</label>
+                    <input type="text" class="form-control" id="subConfigDecsription" placeholder="" name="subConfigDecsription" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> This description will be displayed under config option.</p>
+                </div>
+
+                <div class="form-check col-12 configRequire d-none">
+                    <label for="subNotNull" class="text-primary"><i class="fa fa-pencil-square-o"></i> Required</label>
+                    <select class="custom-select config-option" name="subNotNull" autocomplete="off" id="subNotNull">
+                        <option value="true" selected="selected">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> n/a</p>
+                </div>
+
+                <div class="col-12 configDefault d-none">
+                    <label for="subDefaultValue" class="text-primary"><i class="fa fa-bookmark"></i> Default value</label>
+                    <input type="text" class="form-control" id="subDefaultValue" placeholder="" name="subDefaultValue" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Default value. "true"/"false"/[string]</p>
+                </div>
+
+                <div class="col-12 configArg">
+                    <label for="subConfigArg" class="text-primary"><i class="fa fa-terminal"></i> Config args</label>
+                    <input type="text" class="form-control" id="subConfigArg" placeholder="" name="subConfigArg" required="true" autocomplete="off">
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Selectable value (Ex: ENDER3,ENDER4,ENDER5) . The first value will be default</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <button type="button" class="btn btn-primary btn-block" onclick="make();"></i> Generate config HTML</button>
+                </div>
+                <div class="col-12">
+                    <label for="source" class="text-primary"><i class="fa fa-file-text-o"></i>Source</label>
+                    <textarea class="form-control" rows="12" id="source"></textarea>
+                </div>
+            </div>
+
+            <div class="row spacer">
+                <div class="col-12 mb-5">
+
+                </div>
+            </div>
+     
+
+        </div>
+        
+        
+        
+        
+        
+	</div>
+</div>
+        </div>
+
+        <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom py-3 py-md-3">
+        <div class="container text-center">
+        <small>Snake oil dev</small>
+        </div>
+    </footer>
+    </body>
+</html>
