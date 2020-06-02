@@ -170,6 +170,7 @@ function getConfigStr()
     });
 
     console.log(configStr);
+    $("#config").text(configStr);
     return configStr;
 }
 

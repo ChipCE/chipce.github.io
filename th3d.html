@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <div class="container mt-2 mb-5" id="config">
+        <div class="container mt-2 mb-5">
             <div class="configStep row" id="config-step-1" step="1">
                 <!-- start of basic config  -->
 
@@ -189,6 +189,17 @@
 
             <div class="configStep row d-none" id="config-step-7" step="7">
                 <!-- start of basic config  -->
+
+            <div class="form-group col-12">
+                <label for="commentInputFiled" class="text-primary"><i class="fa fa-tags"></i> Tags</label>
+                <input type="text" class="form-control" id="commentInputFiled" placeholder="Tags" name="comment" required="true">
+            </div>
+            <p class="text-muted"><i class="fa fa-info-circle"></i> Assign tags to your config file so you can find it later with the search function.</p>
+            
+            <div class="form-group col-12">
+                <label for="config" class="text-primary"><i class="fa fa-tags"></i> Review</label>
+                <textarea class="form-control rounded-0" name="config" rows="15" required="true" id="config"></textarea>
+            </div>
 
                 <!-- end of basic config  -->
 
