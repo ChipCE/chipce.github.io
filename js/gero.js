@@ -147,4 +147,9 @@ function make()
             $("#source").text(configStr);
         }
     }
+
+    
+    $("#source").select();
+    document.execCommand("copy");
+
 }

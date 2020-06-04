@@ -95,6 +95,8 @@ function switchToStep(step)
 
     if(step == 7)
         generateConfig();
+    
+    $("html, body").animate({ scrollTop: 0 }, 500);
 }
 
 
