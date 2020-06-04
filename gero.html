@@ -97,10 +97,28 @@
                     <p class="text-muted"><i class="fa fa-info-circle"></i> n/a</p>
                 </div>
 
+                <div class="form-check col-12 configForceMacro d-none">
+                    <label for="mainForceMacro" class="text-primary"><i class="fa fa-exchange"></i> Force macro</label>
+                    <select class="custom-select config-option" name="mainForceMacro" autocomplete="off" id="mainForceMacro">
+                        <option value="true" selected="selected">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Force the input value from string into macro (ex: #define NAME "sankeoil" -> #define NAME snakeoil)</p>
+                </div>
+
                 <div class="col-12 d-none configDefault">
                     <label for="mainDefaultValue" class="text-primary"><i class="fa fa-bookmark"></i> Default value</label>
                     <input type="text" class="form-control" id="mainDefaultValue" placeholder="" name="mainDefaultValue" required="true" autocomplete="off">
                     <p class="text-muted"><i class="fa fa-info-circle"></i> Default value. "true"/"false"/[string]</p>
+                </div>
+
+                <div class="col-12 configIdAppend">
+                    <label for="mainAppendId" class="text-primary"><i class="fa fa-plus-circle"></i> Append Id</label>
+                    <select class="custom-select config-option" name="mainAppendId" autocomplete="off" id="mainAppendId">
+                        <option value="false" selected="selected">False</option>
+                        <option value="true">true</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Append config ID into selected value</p>
                 </div>
 
                 <div class="col-12 configArg">
@@ -164,10 +182,28 @@
                     <p class="text-muted"><i class="fa fa-info-circle"></i> n/a</p>
                 </div>
 
+                <div class="form-check col-12 configForceMacro d-none">
+                    <label for="subForceMacro" class="text-primary"><i class="fa fa-exchange"></i> Force macro</label>
+                    <select class="custom-select config-option" name="subForceMacro" autocomplete="off" id="subForceMacro">
+                        <option value="true" selected="selected">True</option>
+                        <option value="false">False</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Force the input value from string into macro (ex: #define NAME "sankeoil" -> #define NAME snakeoil)</p>
+                </div>
+
                 <div class="col-12 configDefault d-none">
                     <label for="subDefaultValue" class="text-primary"><i class="fa fa-bookmark"></i> Default value</label>
                     <input type="text" class="form-control" id="subDefaultValue" placeholder="" name="subDefaultValue" required="true" autocomplete="off">
                     <p class="text-muted"><i class="fa fa-info-circle"></i> Default value. "true"/"false"/[string]</p>
+                </div>
+
+                <div class="col-12 configIdAppend">
+                    <label for="subAppendId" class="text-primary"><i class="fa fa-plus-circle"></i> Append Id</label>
+                    <select class="custom-select config-option" name="subAppendId" autocomplete="off" id="subAppendId">
+                        <option value="false" selected="selected">False</option>
+                        <option value="true">true</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Append config ID into selected value</p>
                 </div>
 
                 <div class="col-12 configArg">
@@ -183,7 +219,7 @@
                 </div>
                 <div class="col-12">
                     <label for="source" class="text-primary"><i class="fa fa-file-text-o"></i>Source</label>
-                    <textarea class="form-control" rows="12" id="source"></textarea>
+                    <textarea class="form-control" rows="12" id="source" autocomplete="off"></textarea>
                 </div>
             </div>
 

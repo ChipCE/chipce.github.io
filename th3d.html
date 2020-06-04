@@ -101,15 +101,33 @@
             <div class="configStep row" id="config-step-1" step="1">
                 <!-- start of basic config  -->
 
-                <div class="config-option-warpper col-12"><label for="printerType" class="text-primary"><i class="fa fa-chevron-down"></i> Printer Type</label><select class="custom-select config-option" name="printerType" autocomplete="off" id="printerType"><option value="P1" selected="selected">P1</option><option value="P2">P2</option><option value="P3">P3</option><option value="P4">P4</option><option value="P5">P5</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> Select printer type</p></div>
+                <!-- @PRINTER_TYPE --><div class="config-option-warpper col-12"><label for="PRINTER_TYPE" class="text-primary"><i class="fa fa-chevron-down"></i> Printer type</label><select class="custom-select config-option" name="PRINTER_TYPE" autocomplete="off" id="PRINTER_TYPE">
+                <option value="CR10" selected="selected">CR10</option>
+                <option value="CR10_MINI">CR10_MINI</option>
+                <option value="CR10S">CR10S</option>
+                <option value="CR10_S4">CR10_S4</option>
+                <option value="CR10_S5">CR10_S5</option>
+                <option value="CR10S_MINI">CR10S_MINI</option>
+                <option value="CR10S_S4">CR10S_S4</option>
+                <option value="CR10S_S5">CR10S_S5</option>
+                <option value="CR20">CR20</option>
+                <option value="ENDER2">ENDER2</option>
+                <option value="ENDER3">ENDER3</option>
+                <option value="ENDER5">ENDER5</option>
+                <option value="ENDER5_PLUS">ENDER5_PLUS</option>
+                <option value="SOVOL_SV01">SOVOL_SV01</option>
+                </select><p class="text-muted"><i class="fa fa-info-circle"></i> Select your printer type.</p></div>
 
-                <div class="config-option-warpper-sub col-12 d-none" parent="printerType" targetValue="P1,P3,P5"><label for="odd" class="text-primary"><i class="fa fa-tags"></i> P odd</label><input type="text" class="form-control config-option-sub" id="odd" placeholder="" name="odd"  autocomplete="off" value="12" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Onsly show when odd number showed</p></div>
+                <!-- @ENDER3_EXTEND_OPTION --><div class="config-option-warpper-sub col-12 d-none" parent="PRINTER_TYPE" targetValue="ENDER3"><label for="ENDER3_EXTEND_OPTION" class="text-primary"><i class="fa fa-chevron-down"></i> Ender 3 frame type</label><select class="custom-select config-option-sub" name="ENDER3_EXTEND_OPTION" autocomplete="off" id="ENDER3_EXTEND_OPTION">
+                <option value="ENDER3_STOCK_FRAME" selected="selected">ENDER3_STOCK_FRAME</option>
+                <option value="ENDER_XTENDER_400">ENDER_XTENDER_400</option>
+                <option value="ENDER_XTENDER_400XL">ENDER_XTENDER_400XL</option>
+                <option value="ENDER_XTENDER_400XL">ENDER_XTENDER_400XL</option>
+                </select><p class="text-muted"><i class="fa fa-info-circle"></i> Ender Xtender Kit Options</p></div>
 
-                <div class="config-option-warpper col-12">
-                <input class="form-check-input config-option" type="checkbox" value="" id="ENABLE_ADV" name="ENABLE_ADV" autocomplete="off"> <label class="form-check-label text-primary" for="ENABLE_ADV">Enable advance setting</label><p class="text-muted"><i class="fa fa-info-circle"></i> Show advance setting</p></div>
+                <!-- @ENDER5_NEW_LEADSCREW --><div class="config-option-warpper-sub col-12 d-none" parent="PRINTER_TYPE" targetValue="ENDER5,ENDER5_PLUS"><input class="form-check-input config-option-sub" type="checkbox" value="" id="ENDER5_NEW_LEADSCREW" name="ENDER5_NEW_LEADSCREW" autocomplete="off"><label class="form-check-label text-primary" for="ENDER5_NEW_LEADSCREW">ENDER5_NEW_LEADSCREW</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you have the new Ender 5 or Ender 5 Pro Model that has the new 800steps/mm Z leadscrew enable this option.</p></div>
 
-                <div class="config-option-warpper-sub col-12 d-none" parent="ENABLE_ADV" targetValue="true"><label for="advType" class="text-primary"><i class="fa fa-chevron-down"></i> adv sub menu</label><select class="custom-select config-option-sub" name="advType" autocomplete="off" id="advType"><option value="a" selected="selected">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> only showed when adv is enabled</p></div>
-
+                <!-- @USER_PRINTER_NAME --><div class="config-option-warpper col-12"><label for="USER_PRINTER_NAME" class="text-primary"><i class="fa fa-chevron-down"></i> Printer name</label><input type="text" class="form-control config-option" id="USER_PRINTER_NAME" placeholder="" name="USER_PRINTER_NAME"  autocomplete="off" value=""><p class="text-muted"><i class="fa fa-info-circle"></i> Set your custom printer name</p></div>
 
                 <!-- end of basic config  -->
                 <div class="form-group col-6">
@@ -121,9 +139,59 @@
             </div>
 
             <div class="configStep row d-none" id="config-step-2" step="2">
-                <!-- start of basic config  -->
+                <!-- start of ABL config  -->
 
-                <!-- end of basic config  -->
+                <!-- @ENDER5_PLUS_BLTOUCH_STOCK --><div class="config-option-warpper-sub col-12 d-none" parent="PRINTER_TYPE" targetValue="ENDER5_PLUS"><input class="form-check-input config-option-sub" type="checkbox" value="" id="ENDER5_PLUS_BLTOUCH_STOCK" name="ENDER5_PLUS_BLTOUCH_STOCK" autocomplete="off"><label class="form-check-label text-primary" for="ENDER5_PLUS_BLTOUCH_STOCK">ENDER5_PLUS_BLTOUCH_STOCK</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using the BL Touch with the stock mount, select this option. You do not need to change other ABL Type settings below. If you are using an aftermarket mount with your BL Touch select BL Touch in the ABL Type setting and use the CUSTOM_PROBE option to set your offsets.</p></div>
+
+                <!-- @ENDER5_PLUS_EZABL --><div class="config-option-warpper-sub col-12 d-none" parent="PRINTER_TYPE" targetValue="ENDER5_PLUS"><input class="form-check-input config-option-sub" type="checkbox" value="" id="ENDER5_PLUS_EZABL" name="ENDER5_PLUS_EZABL" autocomplete="off"><label class="form-check-label text-primary" for="ENDER5_PLUS_EZABL">ENDER5_PLUS_EZABL</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using an EZABL with your Ender 5 Plus use this option.</p></div>
+
+                <!-- @ENDER5_PLUS_NOABL --><div class="config-option-warpper-sub col-12 d-none" parent="PRINTER_TYPE" targetValue="ENDER5_PLUS"><input class="form-check-input config-option-sub" type="checkbox" value="" id="ENDER5_PLUS_NOABL" name="ENDER5_PLUS_NOABL" autocomplete="off"><label class="form-check-label text-primary" for="ENDER5_PLUS_NOABL">ENDER5_PLUS_NOABL</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are not using any ABL on your Ender 5 Plus use this option.</p></div>
+
+                <!-- @ABL_TYPE --><div class="config-option-warpper col-12"><label for="ABL_TYPE" class="text-primary"><i class="fa fa-chevron-down"></i> Bed leveling type</label><select class="custom-select config-option" name="ABL_TYPE" autocomplete="off" id="ABL_TYPE"><option value="NONE" selected="selected">NONE</option><option value="EZABL">EZABL</option><option value="BLTOUCH">BLTOUCH</option><option value="MANUAL_MESH_LEVELING">MANUAL_MESH_LEVELING</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> Select the type of bed leveling you want to use.</p></div>
+
+                <!-- @SERVO0_PIN --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="BLTOUCH"><label for="SERVO0_PIN" class="text-primary"><i class="fa fa-chevron-down"></i> SERVO0_PIN</label><input type="text" class="form-control config-option-sub" id="SERVO0_PIN" placeholder="" name="SERVO0_PIN"  autocomplete="off" value="P2_04" required="true" forceMacro="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Here is where you set your servo pin. For EZBoard use P2_04</p></div>
+
+                <!-- @ABL_MOUNT --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="BLTOUCH,EZABL"><label for="ABL_MOUNT" class="text-primary"><i class="fa fa-chevron-down"></i> ABL_MOUNT</label><select class="custom-select config-option-sub" name="ABL_MOUNT" autocomplete="off" id="ABL_MOUNT" hasChild="true">
+                <option value="CR10_OEM" selected="selected">CR10_OEM</option>
+                <option value="CR10_VOLCANO">CR10_VOLCANO</option>
+                <option value="SV01_OEM_MOUNT">SV01_OEM_MOUNT</option>
+                <option value="CR10_V6HEAVYDUTY">CR10_V6HEAVYDUTY</option>
+                <option value="CR10_FANG">CR10_FANG</option>
+                <option value="TM3DAERO">TM3DAERO</option>
+                <option value="TM3DAERO_EXTENDED">TM3DAERO_EXTENDED</option>
+                <option value="PETSFANG">PETSFANG</option>
+                <option value="ENDER2_V6">ENDER2_V6</option>
+                <option value="ENDER2_OEM">ENDER2_OEM</option>
+                <option value="CUSTOM_PROBE">CUSTOM_PROBE</option>
+                </select><p class="text-muted"><i class="fa fa-info-circle"></i> ABL Probe Mounts. The PETSFANG option is the RIGHT mounted version, if using the left mount please use the CUSTOM_PROBE option. Select CUSTOM_PROBE if using BLTOUCH.</p></div>
+
+                <!-- @X_PROBE_OFFSET_FROM_EXTRUDER --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_MOUNT" targetValue="CUSTOM_PROBE"><label for="X_PROBE_OFFSET_FROM_EXTRUDER" class="text-primary"><i class="fa fa-chevron-down"></i> X_PROBE_OFFSET_FROM_EXTRUDER</label><input type="number" class="form-control config-option-sub" id="X_PROBE_OFFSET_FROM_EXTRUDER" placeholder="" name="X_PROBE_OFFSET_FROM_EXTRUDER"  autocomplete="off" value="0" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> X offset: -left  +right of the nozzle</p></div>
+
+                <!-- @Y_PROBE_OFFSET_FROM_EXTRUDER --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_MOUNT" targetValue="CUSTOM_PROBE"><label for="Y_PROBE_OFFSET_FROM_EXTRUDER" class="text-primary"><i class="fa fa-chevron-down"></i> Y_PROBE_OFFSET_FROM_EXTRUDER</label><input type="number" class="form-control config-option-sub" id="Y_PROBE_OFFSET_FROM_EXTRUDER" placeholder="" name="Y_PROBE_OFFSET_FROM_EXTRUDER"  autocomplete="off" value="0" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i>  Y offset: -front +behind of the nozzle</p></div>
+
+                <!-- @EZABL_FASTPROBE --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL"><input class="form-check-input config-option-sub" type="checkbox" value="" id="EZABL_FASTPROBE" name="EZABL_FASTPROBE" autocomplete="off" checked="checked"><label class="form-check-label text-primary" for="EZABL_FASTPROBE">EZABL_FASTPROBE</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you have issues with your machine running the faster probe setting disable the #define EZABL_FASTPROBE option. Most machines will work with the fast probe enabled. Use M48 to verify accuracy.</p></div>
+
+                <!-- @EZABL_SUPERFASTPROBE --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL"><input class="form-check-input config-option-sub" type="checkbox" value="" id="EZABL_SUPERFASTPROBE" name="EZABL_SUPERFASTPROBE" autocomplete="off"><label class="form-check-label text-primary" for="EZABL_SUPERFASTPROBE">EZABL_SUPERFASTPROBE</label><p class="text-muted"><i class="fa fa-info-circle"></i> Superfast probing - Only works with the EZABL Pro Sensors (15mm/s Speed)</p></div>
+
+                <!-- @V3_EZABL_ON_SERVO --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL"><input class="form-check-input config-option-sub" type="checkbox" value="" id="V3_EZABL_ON_SERVO" name="V3_EZABL_ON_SERVO" autocomplete="off"><label class="form-check-label text-primary" for="V3_EZABL_ON_SERVO">V3_EZABL_ON_SERVO</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are having issues with the EZABL not triggering when connected to the Z-Stop header you can use the servo header pins.</p></div>
+
+                <!-- @EZABL_PROBE_EDGE --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><label for="EZABL_PROBE_EDGE" class="text-primary"><i class="fa fa-chevron-down"></i> EZABL_PROBE_EDGE</label><input type="number" class="form-control config-option-sub" id="EZABL_PROBE_EDGE" placeholder="" name="EZABL_PROBE_EDGE"  autocomplete="off" value="35" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> If you want to change how far in or out the probe senses change EZABL_PROBE_EDGE value below. 35 works for most machines.</p></div>
+
+                <!-- @EZABL_POINTS --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><label for="EZABL_POINTS" class="text-primary"><i class="fa fa-chevron-down"></i> EZABL_POINTS</label><input type="number" class="form-control config-option-sub" id="EZABL_POINTS" placeholder="" name="EZABL_POINTS"  autocomplete="off" value="3" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> If you want more or less ABL probe points change the number above (only used if ABL enabled). Default is 3 which gives you 3x3 grid for a total of 9 points. STICK WITH ODD NUMBERS</p></div>
+
+                <!-- @PROBING_MOTORS_OFF --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><input class="form-check-input config-option-sub" type="checkbox" value="" id="PROBING_MOTORS_OFF" name="PROBING_MOTORS_OFF" autocomplete="off"><label class="form-check-label text-primary" for="PROBING_MOTORS_OFF">PROBING_MOTORS_OFF</label><p class="text-muted"><i class="fa fa-info-circle"></i> This will disable the XYE motors during probing. Can be useful if you have stepper motors causing interference issues with the EZABL sensor.</p></div>
+
+                <!-- @HEATERS_ON_DURING_PROBING --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><input class="form-check-input config-option-sub" type="checkbox" value="" id="HEATERS_ON_DURING_PROBING" name="HEATERS_ON_DURING_PROBING" autocomplete="off"><label class="form-check-label text-primary" for="HEATERS_ON_DURING_PROBING">HEATERS_ON_DURING_PROBING</label><p class="text-muted"><i class="fa fa-info-circle"></i> Heaters will stay on during probing - only use if directed to by support. Do not use on AC beds.</p></div>
+
+                <!-- @WAIT_FOR_BED_HEATER --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><input class="form-check-input config-option-sub" type="checkbox" value="" id="WAIT_FOR_BED_HEATER" name="WAIT_FOR_BED_HEATER" autocomplete="off"><label class="form-check-label text-primary" for="WAIT_FOR_BED_HEATER">WAIT_FOR_BED_HEATER</label><p class="text-muted"><i class="fa fa-info-circle"></i> Letting the bed heat recover between probes can increase accuracy due to the bed warping during cooling/heating. Enabling this option will let the bed get back to temperature during probing but will increase probing times.</p></div>
+
+                <!-- @EZABL_OUTSIDE_GRID_COMPENSATION --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><input class="form-check-input config-option-sub" type="checkbox" value="" id="EZABL_OUTSIDE_GRID_COMPENSATION" name="EZABL_OUTSIDE_GRID_COMPENSATION" autocomplete="off"><label class="form-check-label text-primary" for="EZABL_OUTSIDE_GRID_COMPENSATION">EZABL_OUTSIDE_GRID_COMPENSATION</label><p class="text-muted"><i class="fa fa-info-circle"></i> This will extrapolate the implied tilt of the bed outside of the probe area. Do not comment out unless directed by support.</p></div>
+
+                <!-- @SLOWER_PROBE_MOVES --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><input class="form-check-input config-option-sub" type="checkbox" value="" id="SLOWER_PROBE_MOVES" name="SLOWER_PROBE_MOVES" autocomplete="off"><label class="form-check-label text-primary" for="SLOWER_PROBE_MOVES">SLOWER_PROBE_MOVES</label><p class="text-muted"><i class="fa fa-info-circle"></i> Does your machine make weird noises/vibrations when it is probing the mesh? Enable this to slow down the speed between probe points.</p></div>
+
+                <!-- @FINE_BABYSTEPPING --><div class="config-option-warpper-sub col-12 d-none" parent="ABL_TYPE" targetValue="EZABL,BLTOUCH"><input class="form-check-input config-option-sub" type="checkbox" value="" id="FINE_BABYSTEPPING" name="FINE_BABYSTEPPING" autocomplete="off"><label class="form-check-label text-primary" for="FINE_BABYSTEPPING">FINE_BABYSTEPPING</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you want a more granular control over the babystepping enable this option. This will make the adjustment finer than the standard setting.</p></div>
+
+                <!-- end of ABL config  -->
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
                 </div>
@@ -134,9 +202,16 @@
             </div>
 
             <div class="configStep row d-none" id="config-step-3" step="3">
-                <!-- start of basic config  -->
+                <!-- start of filament sensor config  -->
 
-                <!-- end of basic config  -->
+                <!-- @FILAMENT_SENSOR_TYPE --><div class="config-option-warpper col-12"><label for="FILAMENT_SENSOR_TYPE" class="text-primary"><i class="fa fa-chevron-down"></i> Filament sensor Type</label><select class="custom-select config-option" name="FILAMENT_SENSOR_TYPE" autocomplete="off" id="FILAMENT_SENSOR_TYPE">
+                <option value="NONE" selected="selected">NONE</option>
+                <option value="EZOUTV2_ENABLE">EZOUTV2_ENABLE</option><option value="CR10S_STOCKFILAMENTSENSOR">CR10S_STOCKFILAMENTSENSOR</option>
+                </select><p class="text-muted"><i class="fa fa-info-circle"></i> Please refer to the EZBoard Documentation for correctly connecting each type of filament sensor.</p></div>
+
+                <!-- @MOUNTED_FILAMENT_SENSOR --><div class="config-option-warpper-sub col-12 d-none" parent="FILAMENT_SENSOR_TYPE" targetValue="EZOUTV2_ENABLE,CR10S_STOCKFILAMENTSENSOR"><input class="form-check-input config-option-sub" type="checkbox" value="" id="MOUNTED_FILAMENT_SENSOR" name="MOUNTED_FILAMENT_SENSOR" autocomplete="off"><label class="form-check-label text-primary" for="MOUNTED_FILAMENT_SENSOR">MOUNTED_FILAMENT_SENSOR</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you have a filament sensor that is physically mounted to the machine you can enable this option to set the unload length to 0 to prevent filament from backing up in the sensor.</p></div>
+
+                <!-- end of filament sensor config  -->
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
                 </div>
@@ -147,9 +222,33 @@
             </div>
 
             <div class="configStep row d-none" id="config-step-4" step="4">
-                <!-- start of basic config  -->
+                <!-- start of thermal config  -->
 
-                <!-- end of basic config  -->
+                <!-- @E_THERMISTOR_TYPE --><div class="config-option-warpper col-12"><label for="E_THERMISTOR_TYPE" class="text-primary"><i class="fa fa-chevron-down"></i> Hotend thermistor type</label><select class="custom-select config-option" name="E_THERMISTOR_TYPE" autocomplete="off" id="E_THERMISTOR_TYPE"><option value="STOCK_HOTEND_THERMISTOR" selected="selected">STOCK_HOTEND_THERMISTOR</option><option value="TH3D_HOTEND_THERMISTOR">TH3D_HOTEND_THERMISTOR</option><option value="V6_HOTEND">V6_HOTEND</option><option value="EZBOARD_PT100">EZBOARD_PT100</option><option value="KNOWN_HOTEND_THERMISTOR">KNOWN_HOTEND_THERMISTOR</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using a Tough Hotend from TH3D or any thermistors TH3D sells for your hotend select TH3D_HOTEND_THERMISTOR option. For E3D and Hemera thermistor select V6_HOTEND. Select EZBOARD_PT100 option for PT100 Thermocouple Support. Refer to the EZBoard installation documentation for connecting the PT100.If you are using a known hotend thermistor value select KNOWN_HOTEND_THERMISTOR option and enter the value below.</p></div>
+
+                <!-- @KNOWN_HOTEND_THERMISTOR_VALUE --><div class="config-option-warpper-sub col-12 d-none" parent="E_THERMISTOR_TYPE" targetValue="KNOWN_HOTEND_THERMISTOR"><label for="KNOWN_HOTEND_THERMISTOR_VALUE" class="text-primary"><i class="fa fa-chevron-down"></i> KNOWN_HOTEND_THERMISTOR_VALUE</label><input type="number" class="form-control config-option-sub" id="KNOWN_HOTEND_THERMISTOR_VALUE" placeholder="" name="KNOWN_HOTEND_THERMISTOR_VALUE"  autocomplete="off" value="1" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Enter the thermistor type number.</p></div>
+
+                <!-- @HIGH_TEMP_THERMISTOR --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="HIGH_TEMP_THERMISTOR" name="HIGH_TEMP_THERMISTOR" autocomplete="off"><label class="form-check-label text-primary" for="HIGH_TEMP_THERMISTOR">HIGH_TEMP_THERMISTOR</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you have a hotend and thermistor capable of over 290C you can set the max temp value below.Setting this higher than 290C on a stock or traditional thermistor will damage it. Refer to your thermistor documentation to see what max temp is.</p></div>
+
+                <!-- @HIGH_TEMP_THERMISTOR_TEMP --><div class="config-option-warpper-sub col-12 d-none" parent="HIGH_TEMP_THERMISTOR" targetValue="true"><label for="HIGH_TEMP_THERMISTOR_TEMP" class="text-primary"><i class="fa fa-chevron-down"></i> HIGH_TEMP_THERMISTOR_TEMP</label><input type="number" class="form-control config-option-sub" id="HIGH_TEMP_THERMISTOR_TEMP" placeholder="" name="HIGH_TEMP_THERMISTOR_TEMP"  autocomplete="off" value="350" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Max temp.</p></div>
+
+                <!-- @HOTEND_THERMAL_PROTECTION_TIME --><div class="config-option-warpper col-12"><label for="HOTEND_THERMAL_PROTECTION_TIME" class="text-primary"><i class="fa fa-chevron-down"></i> HOTEND_THERMAL_PROTECTION_TIME</label><input type="number" class="form-control config-option" id="HOTEND_THERMAL_PROTECTION_TIME" placeholder="" name="HOTEND_THERMAL_PROTECTION_TIME"  autocomplete="off" value="60" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> If you want to make thermal protection periods less or more adjust below. The number is in seconds. If you are getting false thermal runaway then increase the protection time. Do not make it over 300.</p></div>
+
+                <!-- @BED_THERMISTOR_TYPE --><div class="config-option-warpper col-12"><label for="BED_THERMISTOR_TYPE" class="text-primary"><i class="fa fa-chevron-down"></i> Bed thermistor type</label><select class="custom-select config-option" name="BED_THERMISTOR_TYPE" autocomplete="off" id="BED_THERMISTOR_TYPE"><option value="STOCK_BED_THERMISTOR" selected="selected">STOCK_BED_THERMISTOR</option><option value="TH3D_BED_THERMISTOR">TH3D_BED_THERMISTOR</option><option value="KEENOVO_TEMPSENSOR">KEENOVO_TEMPSENSOR</option><option value="KNOWN_BED_THERMISTOR">KNOWN_BED_THERMISTOR</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using a thermistor TH3D sells for your bed select TH3D_BED_THERMISTOR option.<br>If you are using a Keenovo with SSR and the Keenovo temperature sensor enable KEENOVO_TEMPSENSOR option.<br>If you are using a known bed thermistor value enable KNOWN_BED_THERMISTOR option and enter the KNOWN_BED_THERMISTOR_VALUE below</p></div>
+
+                <!-- @KNOWN_BED_THERMISTOR_VALUE --><div class="config-option-warpper-sub col-12 d-none" parent="BED_THERMISTOR_TYPE" targetValue="KNOWN_BED_THERMISTOR"><label for="KNOWN_BED_THERMISTOR_VALUE" class="text-primary"><i class="fa fa-chevron-down"></i> KNOWN_BED_THERMISTOR_VALUE</label><input type="number" class="form-control config-option-sub" id="KNOWN_BED_THERMISTOR_VALUE" placeholder="" name="KNOWN_BED_THERMISTOR_VALUE"  autocomplete="off" value="1" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Bed thermistor type number.</p></div>
+
+                <!-- @BED_THERMAL_PROTECTION_TIME --><div class="config-option-warpper col-12"><label for="BED_THERMAL_PROTECTION_TIME" class="text-primary"><i class="fa fa-chevron-down"></i> BED_THERMAL_PROTECTION_TIME</label><input type="number" class="form-control config-option" id="BED_THERMAL_PROTECTION_TIME" placeholder="" name="BED_THERMAL_PROTECTION_TIME"  autocomplete="off" value="180" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> If you want to make thermal protection periods less or more adjust below. The number is in seconds. If you are getting false thermal runaway then increase the protection time. Do not make it over 300.</p></div>
+
+                <!-- @PIDBED_ENABLE --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="PIDBED_ENABLE" name="PIDBED_ENABLE" autocomplete="off"><label class="form-check-label text-primary" for="PIDBED_ENABLE">PIDBED_ENABLE</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you want PID tuning on your bed you can enable the this option. But PID on a bed is not typically needed. By default BED PID is disabled.</p></div>
+
+                <!-- @AC_BED --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="AC_BED" name="AC_BED" autocomplete="off"><label class="form-check-label text-primary" for="AC_BED">AC_BED</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using an AC bed with a standalone controller (Keenovo) enable this option to disable the heated bed in the firmware</p></div>
+
+                <!-- @BED_HIGHTEMP --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="BED_HIGHTEMP" name="BED_HIGHTEMP" autocomplete="off"><label class="form-check-label text-primary" for="BED_HIGHTEMP">BED_HIGHTEMP</label><p class="text-muted"><i class="fa fa-info-circle"></i> Stock bed max is 120C for this firmware. Enable this to allow temps up to 150C. Your bed must support this temp for it to achieve the higher temperatures.</p></div>
+
+
+
+                <!-- end of thermal config  -->
 
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
@@ -161,9 +260,33 @@
             </div>
 
             <div class="configStep row d-none" id="config-step-5" step="5">
-                <!-- start of basic config  -->
+                <!-- start of motor config  -->
 
-                <!-- end of basic config  -->
+                <!-- @DIRECT_DRIVE_PRINTER --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="DIRECT_DRIVE_PRINTER" name="DIRECT_DRIVE_PRINTER" autocomplete="off"><label class="form-check-label text-primary" for="DIRECT_DRIVE_PRINTER">DIRECT_DRIVE_PRINTER</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you have a direct drive machine with a filament sensor enable this option to decrease the unload length from 100mm to 20mm.</p></div>
+
+                <!-- @CUSTOM_ESTEPS --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="CUSTOM_ESTEPS" name="CUSTOM_ESTEPS" autocomplete="off"><label class="form-check-label text-primary" for="CUSTOM_ESTEPS">CUSTOM_ESTEPS</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you want to set custom Estep select CUSTOM_ESTEPS option.</p></div>
+
+                <!-- @CUSTOM_ESTEPS_VALUE --><div class="config-option-warpper-sub col-12 d-none" parent="CUSTOM_ESTEPS" targetValue="true"><label for="CUSTOM_ESTEPS_VALUE" class="text-primary"><i class="fa fa-chevron-down"></i> CUSTOM_ESTEPS_VALUE</label><input type="number" class="form-control config-option-sub" id="CUSTOM_ESTEPS_VALUE" placeholder="" name="CUSTOM_ESTEPS_VALUE"  autocomplete="off" value="463" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> If you want to change the Esteps for your printer set CUSTOM_ESTEPS_VALUE to what you want - USE WHOLE NUMBERS ONLY</p></div>
+
+                <!-- @REVERSE_E_MOTOR_DIRECTION --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="REVERSE_E_MOTOR_DIRECTION" name="REVERSE_E_MOTOR_DIRECTION" autocomplete="off"><label class="form-check-label text-primary" for="REVERSE_E_MOTOR_DIRECTION">REVERSE_E_MOTOR_DIRECTION</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you reversed the wiring on your E motor already (like the Bondtech Guide says to do) then you do not need to reverse it in the firmware here.</p></div>
+
+                <!-- @STEALTHCHOP_E --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="STEALTHCHOP_E" name="STEALTHCHOP_E" autocomplete="off"><label class="form-check-label text-primary" for="STEALTHCHOP_E">STEALTHCHOP_E</label><p class="text-muted"><i class="fa fa-info-circle"></i> By default we have StealthChop2 Disabled for the E axis. This is due to the possibility of losing steps due to the low torque nature of StealthChop2. If you want to quiet down the E motor you can enable this option. However, if you get lost steps and inconsistent extrusion then disable this option.</p></div>
+
+                <!-- @PANCAKE_STEPPER --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="PANCAKE_STEPPER" name="PANCAKE_STEPPER" autocomplete="off"><label class="form-check-label text-primary" for="PANCAKE_STEPPER">PANCAKE_STEPPER</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using a pancake stepper enable the this option to reduce the motor current and lower the stepper temperature.</p></div>
+
+                <!-- @REVERSE_X_MOTOR --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="REVERSE_X_MOTOR" name="REVERSE_X_MOTOR" autocomplete="off"><label class="form-check-label text-primary" for="REVERSE_X_MOTOR">REVERSE_X_MOTOR</label><p class="text-muted"><i class="fa fa-info-circle"></i> Reverse the direction of X motor</p></div>
+
+                <!-- @REVERSE_Y_MOTOR --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="REVERSE_Y_MOTOR" name="REVERSE_Y_MOTOR" autocomplete="off"><label class="form-check-label text-primary" for="REVERSE_Y_MOTOR">REVERSE_Y_MOTOR</label><p class="text-muted"><i class="fa fa-info-circle"></i> Reverse the direction of Y motor</p></div>
+
+                <!-- @REVERSE_Z_MOTOR --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="REVERSE_Z_MOTOR" name="REVERSE_Z_MOTOR" autocomplete="off"><label class="form-check-label text-primary" for="REVERSE_Z_MOTOR">REVERSE_Z_MOTOR</label><p class="text-muted"><i class="fa fa-info-circle"></i> Reverse the direction of Z motor</p></div>
+
+                <p class="text-muted"><i class="fa fa-info-circle"></i> If you need to reverse the direction of a motor enable the above option for that axis.</p>
+                <p class="text-muted"><i class="fa fa-info-circle"></i><strong> Most machines will not need these options set. But if yours has an axis that is not going the correct direction you can change it here.</strong></p>
+
+                <!-- @DUAL_Z_MOTORS --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="DUAL_Z_MOTORS" name="DUAL_Z_MOTORS" autocomplete="off"><label class="form-check-label text-primary" for="DUAL_Z_MOTORS">DUAL_Z_MOTORS</label><p class="text-muted"><i class="fa fa-info-circle"></i> When running dual Z motors enable this option. This will increase the DEFAULT Z motor driver current for 2x motors.</p></div>
+                <p class="text-muted"><i class="fa fa-info-circle"></i><strong> Machines that come stock with Dual Z will have this enabled already in our backend.</strong></p>
+
+                <!-- end of motor config  -->
 
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
@@ -175,9 +298,37 @@
             </div>
 
             <div class="configStep row d-none" id="config-step-6" step="6">
-                <!-- start of basic config  -->
+                <!-- start of misc config  -->
 
-                <!-- end of basic config  -->
+                <!-- @FAN_FIX --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="FAN_FIX" name="FAN_FIX" autocomplete="off"><label class="form-check-label text-primary" for="FAN_FIX">FAN_FIX</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you have a 5015 fan that whines when under max speed enable this option.</p></div>
+
+                <!-- @SLOWER_HOMING --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="SLOWER_HOMING" name="SLOWER_HOMING" autocomplete="off"><label class="form-check-label text-primary" for="SLOWER_HOMING">SLOWER_HOMING</label><p class="text-muted"><i class="fa fa-info-circle"></i> If your printer is homing to the endstops hard enable this to change the homing speed/divisor to make it less aggressive.</p></div>
+
+                <!-- @HOME_ADJUST --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="HOME_ADJUST" name="HOME_ADJUST" autocomplete="off"><label class="form-check-label text-primary" for="HOME_ADJUST">HOME_ADJUST</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you need to adjust your XY home offsets from defaults then you can enable this option and enter your custom XY offsets. This is provided for convenience and is unsupported with included product support. Measure (home XY then jog using the LCD 1mm at a time) the X and Y distance the nozzle is off the build plate and then put those as NEGATIVE values below, positive values will NOT work (move your endstops to fix a positve offset).</p></div>
+
+                <!-- @X_HOME_LOCATION --><div class="config-option-warpper-sub col-12 d-none" parent="HOME_ADJUST" targetValue="true"><label for="X_HOME_LOCATION" class="text-primary"><i class="fa fa-chevron-down"></i> X_HOME_LOCATION</label><input type="number" class="form-control config-option-sub" id="X_HOME_LOCATION" placeholder="" name="X_HOME_LOCATION"  autocomplete="off" value="-10" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> X_HOME_LOCATION</p></div>
+
+                <!-- @Y_HOME_LOCATION --><div class="config-option-warpper-sub col-12 d-none" parent="HOME_ADJUST" targetValue="true"><label for="Y_HOME_LOCATION" class="text-primary"><i class="fa fa-chevron-down"></i> Y_HOME_LOCATION</label><input type="number" class="form-control config-option-sub" id="Y_HOME_LOCATION" placeholder="" name="Y_HOME_LOCATION"  autocomplete="off" value="-10" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Y_HOME_LOCATION</p></div>
+
+                <!-- @LINEAR_ADVANCE --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="LINEAR_ADVANCE" name="LINEAR_ADVANCE" autocomplete="off"><label class="form-check-label text-primary" for="LINEAR_ADVANCE">LINEAR_ADVANCE</label><p class="text-muted"><i class="fa fa-info-circle"></i> Enable LINEAR_ADVANCE and change the K Value below or use M900 KX.XX in your starting code (recommended).</p></div>
+
+                <!-- @LINEAR_ADVANCE_K --><div class="config-option-warpper-sub col-12 d-none" parent="LINEAR_ADVANCE" targetValue="true"><label for="LINEAR_ADVANCE_K" class="text-primary"><i class="fa fa-chevron-down"></i> LINEAR_ADVANCE_K</label><input type="number" class="form-control config-option-sub" id="LINEAR_ADVANCE_K" placeholder="" name="LINEAR_ADVANCE_K"  autocomplete="off" value="0" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> K value of linear advance.</p></div>
+
+                <!-- @POWER_LOSS_RECOVERY --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="POWER_LOSS_RECOVERY" name="POWER_LOSS_RECOVERY" autocomplete="off"><label class="form-check-label text-primary" for="POWER_LOSS_RECOVERY">POWER_LOSS_RECOVERY</label><p class="text-muted"><i class="fa fa-info-circle"></i> This feature causes excessive wear on your SD card. This will disable junction jerk,  SCurve Acceleration, and Linear Advance due to RAM limitations.</p></div>
+
+                <!-- @S_CURVE_ACCELERATION_DISABLE --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="S_CURVE_ACCELERATION_DISABLE" name="S_CURVE_ACCELERATION_DISABLE" autocomplete="off"><label class="form-check-label text-primary" for="S_CURVE_ACCELERATION_DISABLE">S_CURVE_ACCELERATION_DISABLE</label><p class="text-muted"><i class="fa fa-info-circle"></i> Disable S curve acceleration</p></div>
+
+                <!-- @JUNCTION_DEVIATION_DISABLE --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="JUNCTION_DEVIATION_DISABLE" name="JUNCTION_DEVIATION_DISABLE" autocomplete="off"><label class="form-check-label text-primary" for="JUNCTION_DEVIATION_DISABLE">JUNCTION_DEVIATION_DISABLE</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you do not like the new Junction Deviation (Jerk) and/or S-Curve Acceleration then you can enable this options to disable each feature.</p></div>
+
+                <!-- @ENABLE_CUSTOM_ZHEIGHT --><div class="config-option-warpper col-12"><input class="form-check-input config-option" type="checkbox" value="" id="ENABLE_CUSTOM_ZHEIGHT" name="ENABLE_CUSTOM_ZHEIGHT" autocomplete="off"><label class="form-check-label text-primary" for="ENABLE_CUSTOM_ZHEIGHT">ENABLE_CUSTOM_ZHEIGHT</label><p class="text-muted"><i class="fa fa-info-circle"></i> If you are using a modded machine with a higher Z height check this option and enter the height value CUSTOM_ZHEIGHT in mm.</p></div>
+
+                <!-- @CUSTOM_ZHEIGHT --><div class="config-option-warpper-sub col-12 d-none" parent="ENABLE_CUSTOM_ZHEIGHT" targetValue="true"><label for="CUSTOM_ZHEIGHT" class="text-primary"><i class="fa fa-chevron-down"></i> CUSTOM_ZHEIGHT</label><input type="number" class="form-control config-option-sub" id="CUSTOM_ZHEIGHT" placeholder="" name="CUSTOM_ZHEIGHT"  autocomplete="off" value="200" required="true"><p class="text-muted"><i class="fa fa-info-circle"></i> Height value is in mm.</p></div>
+
+                
+                <!-- @LCD_LANGUAGE --><div class="config-option-warpper col-12"><label for="LCD_LANGUAGE" class="text-primary"><i class="fa fa-chevron-down"></i> LCD_LANGUAGE</label><select class="custom-select config-option" name="LCD_LANGUAGE" autocomplete="off" id="LCD_LANGUAGE" appendId="true"><option value="en" selected="selected">en</option><option value="an">an</option><option value="bg">bg</option><option value="ca">ca</option><option value="cn">cn</option><option value="cz">cz</option><option value="cz_utf8">cz_utf8</option><option value="de">de</option><option value="el">el</option><option value="el-gr">el-gr</option><option value="es">es</option><option value="eu">eu</option><option value="fi">fi</option><option value="fr">fr</option><option value="fr_utf8">fr_utf8</option><option value="gl">gl</option><option value="ht">ht</option><option value="it">it</option><option value="kana">kana</option><option value="kana_utf8">kana_utf8</option><option value="nl">nl</option><option value="pl">pl</option><option value="pt">pt</option><option value="pt_utf8">pt_utf8</option><option value="pt-br">pt-br</option><option value="pt-br_utf8">pt-br_utf8</option><option value="ru">ru</option><option value="sk_utf8">sk_utf8</option><option value="tr">tr</option><option value="uk">uk</option><option value="zh_CN">zh_CN</option><option value="zh_TW">zh_TW</option></select><p class="text-muted"><i class="fa fa-info-circle"></i> Select the language to display on the LCD.<br>This is provided for convenience and is unsupported if there are issues.</p></div>
+
+
+                <!-- end of misc config  -->
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
                 </div>
@@ -188,20 +339,20 @@
             </div>
 
             <div class="configStep row d-none" id="config-step-7" step="7">
-                <!-- start of basic config  -->
+                <!-- start of review config  -->
 
             <div class="form-group col-12">
-                <label for="commentInputFiled" class="text-primary"><i class="fa fa-tags"></i> Tags</label>
+                <label for="commentInputFiled" class="text-primary"><i class="fa fa-chevron-down"></i> Tags</label>
                 <input type="text" class="form-control" id="commentInputFiled" placeholder="Tags" name="comment" required="true">
             </div>
             <p class="text-muted"><i class="fa fa-info-circle"></i> Assign tags to your config file so you can find it later with the search function.</p>
             
             <div class="form-group col-12">
-                <label for="config" class="text-primary"><i class="fa fa-tags"></i> Review</label>
-                <textarea class="form-control rounded-0" name="config" rows="15" required="true" id="config"></textarea>
+                <label for="config" class="text-primary"><i class="fa fa-chevron-down"></i> Review</label>
+                <textarea class="form-control rounded-0" name="config" rows="15" required="true" id="config" readonly></textarea>
             </div>
 
-                <!-- end of basic config  -->
+                <!-- end of review config  -->
 
                 <div class="form-group col-6">
                     <button type="button" class="btn btn-dark btn-block" autocomplete="off" onclick="prevButtonHandle(this);"><i class="fa fa-chevron-left"></i> Previous step</button>
