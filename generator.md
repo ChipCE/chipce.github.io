@@ -1,5 +1,6 @@
 # EZconfig - html config generator manual  
-This is the manual of EZconfig - html config generator tool. Unlike the old version that require to modify frontend webUI ,frontend javascript and python backend to add new config, this version use javascript to auto generate the config string so only modify the frontend webUI(ezconfig.html) is needed.
+This is the manual of EZconfig - html config generator tool.  
+Unlike in the old version that require to modify frontend webUI ,frontend javascript and python backend to add new config, this version use javascript to auto generate the config string so only modify the frontend webUI(ezconfig.html) is needed.
 
 
 ## How to use
@@ -46,18 +47,18 @@ With <code>Force macro</code>=<code>false</code> the config string will be <code
 - Default value : The default value of text input.  
 
 #### 3.5 Numer only config parameter
-- Default value : The default value of text input.(must be a number)  
+- Default value : The default value of number input.(must be a number)  
 
 ### 3.6 Sub level only config parameter
 Sub level config is hide by default and only visible when some conditions meet.  
 - Target config : the id of condition.  
 - Target value : the value of condition.  
 
-Example 1 : A config option only visible when user selected ENDER3 or ENDER5 in PRINTER_TYPE config
+Example 1 : A config option only visible when user selected ENDER3 or ENDER5 in PRINTER_TYPE config  
 <code>Target config</code>=<code>PRINTER_TYPE</code>  
 <code>Target value</code>=<code>ENDER3,ENDER5</code>  
 
-Example 2 : A config option only visible when user enabled LINEAR_ADVANCE
+Example 2 : A config option only visible when user enabled LINEAR_ADVANCE  
 <code>Target config</code>=<code>LINEAR_ADVANCE</code>  
 <code>Target value</code>=<code>true</code>  
 
