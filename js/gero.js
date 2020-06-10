@@ -18,13 +18,23 @@ function configLevlelHandle()
 
 function configTypeHandle(ele)
 {
-    if($(ele).val() == "text" || $(ele).val() == "number")
+    if($(ele).val() == "text")
     {
         $(".configRequire").removeClass("d-none");
         $(".configDefault").removeClass("d-none");
         $(".configArg").addClass("d-none");
         $(".configIdAppend").addClass("d-none");
         $(".configForceMacro").removeClass("d-none");
+        $(".configHasChild").addClass("d-none");
+    }
+    else if($(ele).val() == "number")
+    {
+        $(".configRequire").removeClass("d-none");
+        $(".configDefault").removeClass("d-none");
+        $(".configArg").addClass("d-none");
+        $(".configIdAppend").addClass("d-none");
+        $(".configForceMacro").addClass("d-none");
+        $(".configHasChild").addClass("d-none");
     }
     else if($(ele).val() == "select")
     {
@@ -33,6 +43,7 @@ function configTypeHandle(ele)
         $(".configArg").removeClass("d-none");
         $(".configIdAppend").removeClass("d-none");
         $(".configForceMacro").addClass("d-none");
+        $(".configHasChild").removeClass("d-none");
     }
     else
     {
@@ -41,6 +52,7 @@ function configTypeHandle(ele)
         $(".configArg").addClass("d-none");
         $(".configIdAppend").addClass("d-none");
         $(".configForceMacro").addClass("d-none");
+        $(".configHasChild").removeClass("d-none");
     }
 }
 
@@ -62,7 +74,7 @@ function make()
         let description = $("#mainConfigDecsription").val();
         console.log(description);
 
-        if(type=="number" || type=="text")
+        if(type=="text")
         {
             let require = $("#mainNotNull").val();
             console.log(require);
@@ -71,6 +83,16 @@ function make()
             let macro = $("#mainForceMacro").val();
 
             configStr = '<!-- @' + name + ' -->\n<div class="config-option-warpper col-12">\n\t<label for="' + name + '" class="text-primary"><i class="fa fa-chevron-down"></i> ' + diplayName + '</label>\n\t<input type="' + type + '" class="form-control config-option" id="' + name + '" placeholder="" name="' + name + '" ' + ' autocomplete="off" value="' + value + '"' + ((require == "true")?' required="true"':'') + ' forceMacro="'+ macro + '">\n\t<p class="text-muted"><i class="fa fa-info-circle"></i> ' + description + '</p>\n</div>';
+            $("#source").text(configStr);
+        }
+        else if(type=="number")
+        {
+            let require = $("#mainNotNull").val();
+            console.log(require);
+            let value = $("#mainDefaultValue").val();
+            console.log(value);
+
+            configStr = '<!-- @' + name + ' -->\n<div class="config-option-warpper col-12">\n\t<label for="' + name + '" class="text-primary"><i class="fa fa-chevron-down"></i> ' + diplayName + '</label>\n\t<input type="' + type + '" class="form-control config-option" id="' + name + '" placeholder="" name="' + name + '" ' + ' autocomplete="off" value="' + value + '"' + ((require == "true")?' required="true"':'') + '>\n\t<p class="text-muted"><i class="fa fa-info-circle"></i> ' + description + '</p>\n</div>';
             $("#source").text(configStr);
         }
         else if(type=="checkbox")
@@ -112,7 +134,7 @@ function make()
         let targetValue = $("#targetValue").val();
         console.log(targetValue);
 
-        if(type=="number" || type=="text")
+        if(type=="text")
         {
             let macro = $("#mainForceMacro").val();
             let require = $("#subNotNull").val();
@@ -123,21 +145,33 @@ function make()
             configStr = '<!-- @' + name + ' -->\n<div class="config-option-warpper-sub col-12 d-none" parent="' + targetConfig + '" targetValue="' + targetValue + '">\n\t<label for="' + name + '" class="text-primary"><i class="fa fa-chevron-down"></i> ' + diplayName + '</label>\n\t<input type="' + type + '" class="form-control config-option-sub" id="' + name + '" placeholder="" name="' + name + '" ' + ' autocomplete="off" value="' + value + '"' + ((require == "true")?' required="true"':'') + ' forceMacro="' + macro +'">\n\t<p class="text-muted"><i class="fa fa-info-circle"></i> ' + description + '</p>\n</div>';
             $("#source").text(configStr);
         }
+        else if(type=="number")
+        {
+            let require = $("#subNotNull").val();
+            console.log(require);
+            let value = $("#subDefaultValue").val();
+            console.log(value);
+
+            configStr = '<!-- @' + name + ' -->\n<div class="config-option-warpper-sub col-12 d-none" parent="' + targetConfig + '" targetValue="' + targetValue + '">\n\t<label for="' + name + '" class="text-primary"><i class="fa fa-chevron-down"></i> ' + diplayName + '</label>\n\t<input type="' + type + '" class="form-control config-option-sub" id="' + name + '" placeholder="" name="' + name + '" ' + ' autocomplete="off" value="' + value + '"' + ((require == "true")?' required="true"':'') + '>\n\t<p class="text-muted"><i class="fa fa-info-circle"></i> ' + description + '</p>\n</div>';
+            $("#source").text(configStr);
+        }
         else if(type=="checkbox")
         {
             let value = $("#subDefaultValue").val();
             console.log(value);
-            let configStr = '<!-- @' + name + ' -->\n<div class="config-option-warpper-sub col-12 d-none" parent="' + targetConfig + '" targetValue="' + targetValue + '">\n\t<input class="form-check-input config-option-sub" type="checkbox" value="" id="' + name + '" name="' + name + '" autocomplete="off"' + ((value=="true")?' checked="checked"':'') +'>\n\t<label class="form-check-label text-primary" for="' + name + '">' + diplayName + '</label>\n\t<p class="text-muted"><i class="fa fa-info-circle"></i> ' + description + '</p>\n</div>';
+            let hasChild = $("#subHasChild").val();
+            let configStr = '<!-- @' + name + ' -->\n<div class="config-option-warpper-sub col-12 d-none" parent="' + targetConfig + '" targetValue="' + targetValue + '">\n\t<input class="form-check-input config-option-sub" type="checkbox" value="" id="' + name + '" name="' + name + '" autocomplete="off"' + ((value=="true")?' checked="checked"':'') +' hasChild="' + hasChild + '">\n\t<label class="form-check-label text-primary" for="' + name + '">' + diplayName + '</label>\n\t<p class="text-muted"><i class="fa fa-info-circle"></i> ' + description + '</p>\n</div>';
             $("#source").text(configStr);
         }
         else if(type=="select")
         {
             let appendId = $("#subAppendId").val();
+            let hasChild = $("#subHasChild").val();
             let arg = $("#subConfigArg").val();
             let argList=arg.split(",");
             console.log(argList);
 
-            let configStr='<!-- @' + name + ' -->\n<div class="config-option-warpper-sub col-12 d-none" parent="' + targetConfig + '" targetValue="' + targetValue + '">\n\t<label for="' + name + '" class="text-primary"><i class="fa fa-chevron-down"></i> ' + diplayName + '</label>\n\t<select class="custom-select config-option-sub" name="' + name + '" autocomplete="off" id="' + name + '" appendId="'+ appendId +'">\n';
+            let configStr='<!-- @' + name + ' -->\n<div class="config-option-warpper-sub col-12 d-none" parent="' + targetConfig + '" targetValue="' + targetValue + '">\n\t<label for="' + name + '" class="text-primary"><i class="fa fa-chevron-down"></i> ' + diplayName + '</label>\n\t<select class="custom-select config-option-sub" name="' + name + '" autocomplete="off" id="' + name + '" appendId="'+ appendId +'" hasChild="' + hasChild + '">\n';
             for(let i = 0;i<argList.length;i++)
             {
                 

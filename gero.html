@@ -52,7 +52,8 @@
                         <option value="main" selected="selected">Main</option>
                         <option value="sub">Sub</option>
                     </select>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Select config level.</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i>Main : This config will be showed by default.</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i>Sub : this config will be hided by default, only visible when some conditions meet.</p>
                 </div>
             </div>
 
@@ -75,7 +76,7 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="mainConfigDecsription" class="text-primary"><i class="fa fa-hashtag"></i> Config description</label>
+                    <label for="mainConfigDecsription" class="text-primary"><i class="fa fa-comment-o"></i> Config description</label>
                     <input type="text" class="form-control" id="mainConfigDecsription" placeholder="" name="mainConfigDecsription" required="true" autocomplete="off">
                     <p class="text-muted"><i class="fa fa-info-circle"></i> This description will be displayed under config option.</p>
                 </div>
@@ -83,9 +84,7 @@
                 <div class="col-12">
                     <label for="mainConfigName" class="text-primary"><i class="fa fa-hashtag"></i> Config id</label>
                     <input type="text" class="form-control" id="mainConfigName" placeholder="" name="mainConfigName" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Config id.</p>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> For dropdown select type, config id can be any unique String. (Ex : "printerType")</p>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> For Checkbox,text or number type, config id must be matched with the #define value (ex: "SNAKE_OIL" for #define SNAKE_OIL)</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> The ID of config, should be the same as the config string in configuration.h. (ex: for #define SNAKEOIL, the config id should be SNAKEOIL) </p>
                 </div>
 
                 <div class="form-check col-12 d-none configRequire">
@@ -144,21 +143,28 @@
                 <div class="col-12">
                     <label for="targetConfig" class="text-primary"><i class="fa fa-crosshairs"></i> Target config</label>
                     <input type="text" class="form-control" id="targetConfig" placeholder="" name="targetConfig" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Name of the parent config, this config will be showed when the parent config is selected or value is matched</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Id of the main config, this sub config will be showed when the main config is selected or value is matched</p>
                 </div>
 
                 <div class="col-12">
                     <label for="targetValue" class="text-primary"><i class="fa fa-flag"></i> Target value</label>
                     <input type="text" class="form-control" id="targetValue" placeholder="" name="targetValue" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> The value of target config. (Ex: ENDER_3,ENDER_4 will show the config when the parent config value is ENDER_3 or ENDER_4). For parent config type is checkbox, use "true" without the qoute.</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> The value of target config. </p>
                 </div>
 
                 <div class="col-12">
                     <label for="subConfigName" class="text-primary"><i class="fa fa-hashtag"></i> Config id</label>
                     <input type="text" class="form-control" id="subConfigName" placeholder="" name="subConfigName" required="true" autocomplete="off">
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> Config id.</p>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> For dropdown select type, config id can be any unique String. (Ex : "printerType")</p>
-                    <p class="text-muted"><i class="fa fa-info-circle"></i> For Checkbox,text or number type, config id must be matched with the #define value (ex: "SNAKE_OIL" for #define SNAKE_OIL)</p>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> The ID of config, should be the same as the config string in configuration.h. (ex: for #define SNAKEOIL, the config id should be SNAKEOIL) </p>
+                </div>
+
+                <div class="col-12 configHasChild">
+                    <label for="subHasChild" class="text-primary"><i class="fa fa-random"></i> Has sub</label>
+                    <select class="custom-select config-option" name="subHasChild" autocomplete="off" id="subHasChild">
+                        <option value="false" selected="selected">False</option>
+                        <option value="true">true</option>
+                    </select>
+                    <p class="text-muted"><i class="fa fa-info-circle"></i> Enable this if this config will be used as condition for other sub level config.</p>
                 </div>
 
                 <div class="col-12">
@@ -168,7 +174,7 @@
                 </div>
 
                 <div class="col-12">
-                    <label for="subConfigDecsription" class="text-primary"><i class="fa fa-hashtag"></i> Config description</label>
+                    <label for="subConfigDecsription" class="text-primary"><i class="fa fa-comment-o"></i> Config description</label>
                     <input type="text" class="form-control" id="subConfigDecsription" placeholder="" name="subConfigDecsription" required="true" autocomplete="off">
                     <p class="text-muted"><i class="fa fa-info-circle"></i> This description will be displayed under config option.</p>
                 </div>
