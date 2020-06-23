@@ -34,7 +34,7 @@ $(document).ready(function(){
             $("#searchHelp").html('Showing results for : ' + searchStr + '<a class="text-primary float-right" onclick="clearSearch();"><i class="fa fa-times"></i> Clear</a>');
             let gcodeList = $(".gcodeItem");
             $(gcodeList.get()).each(function () {
-                if($(this).find(".badge").text().includes(searchStr))
+                if($(this).text().includes(searchStr))
                     $(this).removeClass("d-none");
                 else
                     $(this).addClass("d-none");
@@ -85,6 +85,7 @@ function insertHandle(ele)
     let codeName = $(ele).find(".badge").text();
     console.log(codeName);
     console.log(getGcodeObject(codeName));
+    $("#optionModal").modal('show');
 }
 
 function deleteHandle(ele)
@@ -99,4 +100,9 @@ function clearSearch()
     $("#search").val("");
     //show alll
     $(".gcodeItem").removeClass("d-none");
+}
+
+function editHandle(ele)
+{
+
 }
