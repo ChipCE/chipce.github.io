@@ -1,125 +1,117 @@
 var gcode = 
 [
     {
-        "code" : "comment",
-        "description" : "Comment",
-        "type" : "comment",
-        "parameters" : 
-        [
-        ]
-    },
-    {
         "code" : "G0",
-        "description" : "Linear non-extrusion movement",
+        "shortDescription" : "Linear non-extrusion movement",
+        "longDescription" : "The G0 and G1 commands add a linear move to the queue to be performed after all previous moves are completed. These commands yield control back to the command parser as soon as the move is queued, but they may delay the command parser while awaiting a slot in the queue.",
         "type" : "G",
-        "parameters" : 
+        "parameter" : 
         [
             {
                 "name":"X",
-                "description":"A coordinate on the X axis",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"Y",
-                "description":"A coordinate on the Y axis",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"Z",
-                "description":"A coordinate on the Z axis",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"E",
-                "description":"The length of filament to feed into the extruder between the start and end point",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"F",
-                "description":"The maximum movement rate of the move between the start and end point. The feedrate set here applies to subsequent moves that omit this parameter.",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
         ]
     },
     {
         "code" : "G1",
-        "description" : "Linear extrusion movement",
+        "shortDescription" : "Linear extrusion movement",
+        "longDescription" : "The G0 and G1 commands add a linear move to the queue to be performed after all previous moves are completed. These commands yield control back to the command parser as soon as the move is queued, but they may delay the command parser while awaiting a slot in the queue.",
         "type" : "G",
-        "parameters" : 
+        "parameter" : 
         [
             {
                 "name":"X",
-                "description":"A coordinate on the X axis",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"Y",
-                "description":"A coordinate on the Y axis",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"Z",
-                "description":"A coordinate on the Z axis",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"E",
-                "description":"The length of filament to feed into the extruder between the start and end point",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
                 "name":"F",
-                "description":"The maximum movement rate of the move between the start and end point. The feedrate set here applies to subsequent moves that omit this parameter.",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
         ]
     },
     {
         "code" : "M0",
-        "description" : "m0 desc",
+        "shortDescription" : "Unconditional stop",
+        "longDescription" : "The M0 commands pause after the last movement and wait for the user to continue.",
         "type" : "M",
-        "parameters" : 
+        "parameter" : 
         [
             {
-                "name":"X",
-                "description":"A coordinate on the X axis",
+                "name":"P",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
-                "name":"Y",
-                "description":"A coordinate on the Y axis",
+                "name":"S",
                 "require":false,
-                "default":null
+                "default":null,
+                "append" : true
             },
             {
-                "name":"Z",
-                "description":"A coordinate on the Z axis",
+                "name":"String",
                 "require":false,
-                "default":null
-            },
-            {
-                "name":"E",
-                "description":"The length of filament to feed into the extruder between the start and end point",
-                "require":false,
-                "default":null
-            },
-            {
-                "name":"F",
-                "description":"The maximum movement rate of the move between the start and end point. The feedrate set here applies to subsequent moves that omit this parameter.",
-                "require":false,
-                "default":null
-            },
+                "default":null,
+                "append" : false
+            }
+        ]
+    },
+    {
+        "code" : "T0",
+        "shortDescription" : "Select Tool",
+        "longDescription" : "Switches to the respective physical/virtual tool head",
+        "type" : "T",
+        "parameter" : 
+        [
         ]
     }
 ]
