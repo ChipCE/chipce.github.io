@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/grender.css">
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/FileSaver.js"></script>
         <script src="js/gcode.js"></script>
         <script src="js/grender.js"></script>
 
@@ -82,7 +83,7 @@
                     <a class="nav-link active" id="editor-tab" data-toggle="tab" href="#editor" role="tab" aria-controls="editor" aria-selected="true">Editor</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="source-tab" data-toggle="tab" href="#source" role="tab" aria-controls="source" aria-selected="false">Export</a>
+                    <a class="nav-link" id="source-tab" data-toggle="tab" href="#source" role="tab" aria-controls="source" aria-selected="false" onclick="exportGcode();">Export</a>
                 </li>
             </ul>
 
@@ -131,12 +132,15 @@
                 </div>
 
                 <div class="tab-pane fade" id="source" role="tabpanel" aria-labelledby="source-tab">
-                    source tab content</br>
-                    test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>
-                    test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>
-                    test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>
-                    test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>
-                    test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>test</br>
+                    <div class="row h-100">
+                        <div class="col-12 overflow-auto">
+                            <div class="form-group" id="sourceGroup">
+                                <label for="exampleFormControlTextarea1" class="text-info"><i class="fa fa-hashtag"></i> G-code </label><a class="text-primary float-right exportControl" onclick="downloadGcode();"><i class="fa fa-download"></i> Download</a><a class="text-primary float-right mr-3 exportControl" onclick="copyGcode();"><i class="fa fa-files-o"></i> Copy</a>
+                                <textarea class="form-control" id="sourceText" readonly></textarea>
+                                <div class="spacer mb-5"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

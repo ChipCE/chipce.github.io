@@ -18,6 +18,15 @@ html,body {
     overflow:scroll;
 }
 
-.codeBadge,.codeComment{
+.codeBadge,.codeComment,.exportControl{
     cursor: pointer;
+}
+
+textarea.form-control {
+    height: 100%;
+}
+
+#sourceGroup
+{
+    height: 100%;
 }
