@@ -66,17 +66,17 @@ function drawGcodeList()
 {
     gcode.forEach(function(entry) {
         //console.log(entry);
-        if(entry.type=="G")
+        if(entry.code[0]=="G")
         {
-            $("#gcodeList").html($("#gcodeList").html() + '<li class="list-group-item py-2 list-group-item-primary gcodeItem" onclick="insertHandle(this);"><span class="badge badge-pill badge-primary">'+ entry.code + '</span> ' + entry.shortDescription + '</li>');
+            $("#gcodeList").html($("#gcodeList").html() + '<li class="list-group-item py-2 list-group-item-primary gcodeItem" onclick="insertHandle(this);"><span class="badge badge-pill badge-primary">'+ entry.code + '</span> ' + entry.codeDescription + '</li>');
         }
-        else if(entry.type=="M")
+        else if(entry.code[0]=="M")
         {
-            $("#gcodeList").html($("#gcodeList").html() + '<li class="list-group-item py-2 list-group-item-info gcodeItem" onclick="insertHandle(this);"><span class="badge badge-pill badge-info">'+ entry.code + '</span> ' + entry.shortDescription + '</li>');
+            $("#gcodeList").html($("#gcodeList").html() + '<li class="list-group-item py-2 list-group-item-info gcodeItem" onclick="insertHandle(this);"><span class="badge badge-pill badge-info">'+ entry.code + '</span> ' + entry.codeDescription + '</li>');
         }
-        else if(entry.type=="T")
+        else if(entry.code[0]=="T")
         {
-            $("#gcodeList").html($("#gcodeList").html() + '<li class="list-group-item py-2 list-group-item-success gcodeItem" onclick="insertHandle(this);"><span class="badge badge-pill badge-success">'+ entry.code + '</span> ' + entry.shortDescription + '</li>');
+            $("#gcodeList").html($("#gcodeList").html() + '<li class="list-group-item py-2 list-group-item-success gcodeItem" onclick="insertHandle(this);"><span class="badge badge-pill badge-success">'+ entry.code + '</span> ' + entry.codeDescription + '</li>');
         }
     });
 }
@@ -104,16 +104,22 @@ function setOptionTemplate(codeName,lineTarget)
     // search for gcode data
     let gcodeObj = getGcodeObject(codeName);
     // set dialog data
-    $("#optionModalTitle").text(gcodeObj.code);
+    $("#modalTitleCode").text(gcodeObj.code);
+    $("#modalTitleDescription").text(gcodeObj.codeDescription);
     
-    $("#optionModalDescription").html('<p class="text-muted"><i class="fa fa-info-circle"></i> ' + gcodeObj.longDescription + '</p>');
+    //set description and "insert" newline char
+    let description = $("#optionModalDescription").text(gcodeObj.parameterDescription);
+    description.html(description.html().replace(/\n/g,'<br/>'));
+    $("#optionModalUrl").html('<a href="' + gcodeObj.url + '" class="text-primary float-right" target="_blank"><i class="fa fa-share-square-o"></i> More info</a>');
+
+
     let configStr="";
     for(let i = 0;i<gcodeObj.parameter.length;i++)
     {
         configStr = configStr + '<div class="col-3 optionParameter" append="' + gcodeObj.parameter[i].append  + '"><label class="text-info"><i class="fa fa-pencil-square-o"></i> ' + gcodeObj.parameter[i].name + '</label><input type="text" class="form-control" placeholder="' + (gcodeObj.parameter[i].default!=null?gcodeObj.parameter[i].default:"") + '" name="' + gcodeObj.parameter[i].name +'" value="' + getUserParamVal(lineTarget,gcodeObj.parameter[i].name) + '"></div>';
     }
     //append inline comment
-    configStr = configStr + '<div class="col-12"><label class="text-success"><i class="fa fa-pencil"></i> comment</label><input type="text" class="form-control" placeholder="Inline comment" name="inlineComment" id="optionInlineComment" onClick="clearDefaultComment(this,\'' + gcodeObj.shortDescription.toString() + '\');" value="' + (getUserParamVal(lineTarget,"comment")!=""?getUserParamVal(lineTarget,"comment"):gcodeObj.shortDescription) +'"></div>';
+    configStr = configStr + '<div class="col-12"><label class="text-success"><i class="fa fa-pencil"></i> comment</label><input type="text" class="form-control" placeholder="Inline comment" name="inlineComment" id="optionInlineComment" onClick="clearDefaultComment(this,\'' + gcodeObj.codeDescription.toString() + '\');" value="' + (getUserParamVal(lineTarget,"comment")!=""?getUserParamVal(lineTarget,"comment"):gcodeObj.codeDescription) +'"></div>';
 
     $("#optionModalParameter").html(configStr);
     $('#optionModalParameter').attr('targetLine', lineTarget.toString());
@@ -169,9 +175,8 @@ function applyGcode(ele)
     };
     // 
 
-
     let targetLine = $("#optionModalParameter").attr("targetLine");
-    let codeName = $("#optionModalTitle").text();
+    let codeName = $("#modalTitleCode").text();
     let gcodeParam = "";
     let gcodeComment = "";
 
@@ -263,10 +268,11 @@ function exportGcode()
 
 function downloadGcode()
 {
-    let fileName = "gcode-" + (new Date()).toISOString().replace(/:/g,"-").replace(/T/g,"_").split('.')[0];
+    let fileName = "gcode-" + (new Date()).toISOString().replace(/:/g,"-").replace(/T/g,"_").split('.')[0] + ".gcode";
     let data = $("#sourceText").val();
     var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
-    saveAs(blob, fileName +".gcode");
+    saveAs(blob, fileName);
+    setExportMsg("Exported to " + fileName + ".")
 }
 
 
@@ -274,4 +280,14 @@ function copyGcode()
 {
     $("#sourceText").select();
     document.execCommand("copy");
+    setExportMsg("Copied to clipboard.")
+}
+
+function setExportMsg(msg)
+{
+    $("#exportMsg").html('<i class="fa fa-info-circle"></i> ' + msg);
+    $("#exportMsg").removeClass("d-none");
+    setTimeout(function() {
+        $("#exportMsg").addClass("d-none");
+    }, 3000);
 }

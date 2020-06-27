@@ -52,7 +52,10 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="optionModalTitle">Gxx</h4>
+                            <p class="modal-title">
+                                <h4 id="modalTitleCode"></h4>&nbsp
+                                <h4 class="text-muted" id="modalTitleDescription"></h4>
+                            </p>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
                         <div class="modal-body" id="optionModalBody">
@@ -64,8 +67,11 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12" id="optionModalDescription">
+                                <div class="col-12 text-muted" id="optionModalDescription">
                                     description
+                                </div>
+                                <div class="col-12" id="optionModalUrl">
+                                    URL
                                 </div>
                             </div>
                         </div>
@@ -135,7 +141,13 @@
                     <div class="row h-100">
                         <div class="col-12 overflow-auto">
                             <div class="form-group" id="sourceGroup">
-                                <label for="exampleFormControlTextarea1" class="text-info"><i class="fa fa-hashtag"></i> G-code </label><a class="text-primary float-right exportControl" onclick="downloadGcode();"><i class="fa fa-download"></i> Download</a><a class="text-primary float-right mr-3 exportControl" onclick="copyGcode();"><i class="fa fa-files-o"></i> Copy</a>
+                                <label for="exampleFormControlTextarea1" class="text-info">
+                                    <i class="fa fa-hashtag"></i> G-code
+                                </label>
+                                
+                                <a class="text-primary float-right exportControl" onclick="downloadGcode();"><i class="fa fa-download"></i> Download</a>
+                                <a class="text-primary float-right mr-3 exportControl" onclick="copyGcode();"><i class="fa fa-files-o"></i> Copy</a>
+                                <a class="text-muted mr-5 float-right d-none" id="exportMsg"></a>
                                 <textarea class="form-control" id="sourceText" readonly></textarea>
                                 <div class="spacer mb-5"></div>
                             </div>

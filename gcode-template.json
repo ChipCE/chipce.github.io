@@ -1,0 +1,16 @@
+    {
+        "code" : "NAME",
+        "codeDescription" : "SCOMMENT",
+        "parameterDescription" : "LCOMMENT",
+        "url" : "URL",
+        "parameter" : 
+        [
+            {
+                "name":"X",
+                "require":false,
+                "default":null,
+                "append" : true
+            },
+
+        ]
+    },

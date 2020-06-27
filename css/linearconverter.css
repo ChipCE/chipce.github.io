@@ -1,0 +1,9 @@
+html,body {
+    background: #f1f1f1 !important; 
+    height: 100vh;
+    overflow-y:hidden;
+}
+
+img {
+    height: 350px;
+}

@@ -4,18 +4,19 @@
         <meta charset="UTF-8">
 
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
 
         <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
-        <title>ChipCE test pages</title>
+        <title>Linear advance converter</title>
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/linearconverter.css">
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/index.js"></script>
+        <script src="js/linearconverter.js"></script>
 
 
     </head>
@@ -32,7 +33,7 @@
                         <a class="nav-link" href="https://github.com/ChipCe"><i class="fa fa-github"></i> Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% block alertListOption %}disabled{% endblock %}" href="#"><i class="fa fa-terminal"></i> Command</a>
+                        <a class="nav-link" href="#"><i class="fa fa-terminal"></i> Command</a>
                     </li>
 
                 </ul>
@@ -42,15 +43,33 @@
             </div>
         </nav>
 
-        
-
         <div class="container mt-2 mb-5" id="main">
-            <a href="th3d.html">TH3D new GUI config</a></br>
-            <a href="gero.html">TH3D config generator</a></br>
-            <a href="grender.html">Gcode editor</a></br>
-            <a href="linearconverter.html">Linear advance K converter</a></br>
-        
-        
+            <div class="row" id="calcRow">
+                <div class="col-5">
+                    <div class="form-group">
+                        <label for="lin10val" class="text-primary"><i class="fa fa-pencil-square-o"></i> Linear advance 1.0</label>
+                        <input type="text" class="form-control" autocomplete="off" id="lin10val" placeholder="Linear advance 1.0 K value">
+                    </div>
+                </div>
+                <div class="col-2 text-center">
+                    </br>
+                    <h1 class="text-primary"><i class="fa fa-exchange"></i></h1>
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <label for="lin15val" class="text-primary"><i class="fa fa-pencil-square-o"></i> Linear advance 1.5</label>
+                        <input type="text" class="form-control" autocomplete="off" id="lin15val" placeholder="Linear advance 1.5 K value">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="srcRow">
+                <div class="col-12 text-center">
+                    <p>Thank Prusa Research for this conversion formula!</p>
+                    <img src="https://user-images.githubusercontent.com/45625875/72543817-92ecff80-3886-11ea-8437-445c55fa86a1.png" alt="chart">
+                    <p class="text-muted">* Conversion chart from Prusa firmware github</p>
+                </div>
+            </div>
+              
         </div>
         
         <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom py-3 py-md-3">
