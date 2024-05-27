@@ -1,1 +1,1 @@
-# ChipCe.github.io
+# ChipCE.github.io

@@ -9,7 +9,7 @@
 
         <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
-        <title>ChipCE test pages</title>
+        <title>Chip@SnakeOilDev</title>
         <link rel="stylesheet" href="css/font-awesome.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/index.css">
@@ -21,7 +21,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <a class="navbar-brand" href="index.html"><i class="fa fa-bug"></i> Snake oil dev<small class="text-muted"> 1.0b</small></a>
+            <a class="navbar-brand" href="index.html"><i class="fa fa-external-link"></i> SnakeOilDev<small class="text-muted"> 1.0b</small></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topNavBar"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse" id="topNavBar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/ChipCe"><i class="fa fa-github"></i> Git</a>
+                        <a class="nav-link d-none" href="https://github.com/ChipCE"><i class="fa fa-github"></i> Github</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% block alertListOption %}disabled{% endblock %}" href="#"><i class="fa fa-terminal"></i> Command</a>
+                        <a class="nav-link d-none" href="#"><i class="fa fa-terminal"></i> Command</a>
                     </li>
 
                 </ul>
@@ -45,17 +45,100 @@
         
 
         <div class="container mt-2 mb-5" id="main">
-            <a href="th3d.html">TH3D new GUI config</a></br>
-            <a href="gero.html">TH3D config generator</a></br>
-            <a href="grender.html">Gcode editor</a></br>
-            <a href="linearconverter.html">Linear advance K converter</a></br>
-        
-        
+            <a class="card bg-info text-white mt-3 mb-3" href="#">
+                <div class="card-header bg-dark export-header font-weight-bold">
+                    <h3>
+                        <i class="fa fa-user"></i> About me
+                    </h3>
+                </div>
+                <div class="card-body bg-white text-dark font-weight-bold">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="https://avatars.githubusercontent.com/u/22391265?v=4" class="img-fluid" alt="avatar">
+                        </div>
+                        <div class="col-8">
+                            <p>Fullstack-ish SnakeOil developer.</p>
+                            <p>Designer of the SnakeOilXY series 3D printers.</p>
+
+                            <span class="badge badge-pill badge-dark d-none">tag</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right bg-dark d-none">
+                </div>
+            </a>
+
+            <a class="card bg-info text-white mt-3 mb-3" href="https://snakeoildev.booth.pm/">
+                <div class="card-header bg-dark export-header font-weight-bold">
+                    <h3>
+                        <i class="fa fa-shopping-cart"></i> Online store / 通販
+                    </h3>
+                </div>
+                <div class="card-body font-weight-bold">
+                    <p>ホンダビートのカスタム部品</p>
+                    <p>3Dプリンター部品など</p>
+                </div>
+                <div class="card-footer text-right bg-dark d-none">
+                </div>
+            </a>
+
+            <a class="card bg-info text-white mt-3 mb-3" href="https://github.com/ChipCE">
+                <div class="card-header bg-dark export-header font-weight-bold">
+                    <h3>
+                        <i class="fa fa-github"></i> Github
+                    </h3>
+                </div>
+                <div class="card-body font-weight-bold d-none">
+                    Source files of my custom hardwares, softwares and other nonsense gadgets.
+                </div>
+                <div class="card-footer text-right bg-dark d-none">
+                </div>
+            </a>
+
+            <a class="card bg-info text-white mt-3 mb-3" href="https://www.youtube.com/@SnakeOilDev">
+                <div class="card-header bg-dark export-header font-weight-bold">
+                    <h3>
+                        <i class="fa fa-youtube-play"></i> Youtube
+                    </h3>
+                </div>
+                <div class="card-body font-weight-bold d-none">
+                    Our official youtube channel. Live build are managed by Apex.
+                </div>
+                <div class="card-footer text-right bg-dark d-none">
+                </div>
+            </a>
+
+            <a class="card bg-info text-white mt-3 mb-3" href="https://twitter.com/ChipMaple">
+                <div class="card-header bg-dark export-header font-weight-bold">
+                    <h3>
+                        <i class="fa fa-twitter"></i> Twitter
+                    </h3>
+                </div>
+                <div class="card-body font-weight-bold d-none">
+                    Follow me for stupid random stuff.
+                </div>
+                <div class="card-footer text-right bg-dark d-none">
+                </div>
+            </a>
+
+            <a class="card bg-info text-white mt-3 mb-3" href="https://ko-fi.com/chipce">
+                <div class="card-header bg-dark export-header font-weight-bold">
+                    <h3>
+                        <i class="fa fa-coffee"></i> Buy me a coffee [ko-fi]
+                    </h3>
+                </div>
+                <div class="card-body font-weight-bold d-none">
+                    Your funding will support the development of our next generation of open-source hardware.
+                </div>
+                <div class="card-footer text-right bg-dark d-none">
+                </div>
+            </a>
+
         </div>
         
-        <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom py-3 py-md-3">
-        <div class="container text-center">
-        <small>Snake oil dev</small>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 fixed-bottom py-3 py-md-3">
+        <div class="container text-center text-white">
+            <small>©SnakeOilDev 2024</small>
         </div>
     </footer>
     </body>
