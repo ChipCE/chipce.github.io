@@ -1,3 +1,8 @@
 body {
     background: #f1f1f1 !important; 
 }
+
+.product-img {
+    height: 250px; /* Set the desired height */
+    object-fit: cover; /* Optional: cover, contain, etc. */
+}
