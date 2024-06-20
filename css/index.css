@@ -3,6 +3,11 @@ body {
 }
 
 .product-img {
-    height: 250px; /* Set the desired height */
-    object-fit: cover; /* Optional: cover, contain, etc. */
+    height: 250px;
+    object-fit: cover;
+}
+
+.shop-logo{
+    height: 50px;
+    object-fit: cover;
 }
