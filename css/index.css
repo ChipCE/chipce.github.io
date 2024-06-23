@@ -3,11 +3,21 @@ body {
 }
 
 .product-img {
-    height: 250px;
+    height: 150px;
     object-fit: cover;
 }
 
 .shop-logo{
+    height: 50px;
+    object-fit: cover;
+}
+
+.big-logo{
+    height: 100px;
+    object-fit: cover;
+}
+
+.small-logo{
     height: 50px;
     object-fit: cover;
 }
