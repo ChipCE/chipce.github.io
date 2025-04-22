@@ -1,5 +1,6 @@
 @layer base, utils, components;
 
+/* @import "tailwindcss"; */
 @import "@webtui/css/base.css";
 
 /* Utils */
@@ -14,3 +15,57 @@
 @import "@webtui/plugin-nf";
 @import '@webtui/theme-nord';
 
+@font-face {
+    font-family: "JetBrainsMonoNFM";
+    src: url("../public/0xProtoNerdFont-Regular.ttf") format("truetype");
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: "JetBrainsMonoNFM";
+    src: url("../public/0xProtoNerdFont-Regular.ttf") format("truetype");
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+
+  .left, .right {
+    width: 20%;       /* Smaller columns */
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .middle {
+    flex: 1;          /* Middle column takes remaining space */
+    display: flex;
+    justify-content: center;
+  }
+
+  .max-width{
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .left,
+    .right {
+      display: none; /* Hide on small screens */
+    }
+
+    .middle {
+      width: 100%;   /* Fill entire width */
+    }
+
+    .container {
+      flex-direction: column; /* optional: stack if needed */
+    }
+  }
+
+  /* style="visibility: hidden;" */
