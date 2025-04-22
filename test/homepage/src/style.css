@@ -1,0 +1,16 @@
+@layer base, utils, components;
+
+@import "@webtui/css/base.css";
+
+/* Utils */
+@import "@webtui/css/utils/box.css"; /*[!code ++]*/
+
+/* Components */
+@import "@webtui/css/components/button.css"; /*[!code ++]*/
+@import "@webtui/css/components/typography.css"; /*[!code ++]*/
+@import "@webtui/css/components/badge.css";
+@import "@webtui/css/components/popover.css";
+
+@import "@webtui/plugin-nf";
+@import '@webtui/theme-nord';
+
