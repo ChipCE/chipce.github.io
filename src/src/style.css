@@ -1,0 +1,189 @@
+
+
+@layer base, utils, components;
+
+/* @import "tailwindcss"; */
+@import "@webtui/css/base.css";
+
+/* Utils */
+@import "@webtui/css/utils/box.css"; /*[!code ++]*/
+
+/* Components */
+@import "@webtui/css/components/button.css"; /*[!code ++]*/
+@import "@webtui/css/components/typography.css"; /*[!code ++]*/
+@import "@webtui/css/components/badge.css";
+@import "@webtui/css/components/popover.css";
+
+
+@import '@webtui/theme-nord';
+@import "@webtui/plugin-nf";
+
+
+@layer base {
+  :root {
+    /* Polar Night */
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+
+    /* Snow Storm */
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+
+    /* Frost */
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
+
+    /* Aurora */
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
+  }
+}
+
+
+  
+@font-face {
+font-family: "PixelMplus12";
+src: url("/fonts/PixelMplus12-Regular.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+    font-family: "MonoNerd";
+    src: url("/fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    }
+
+
+html,body, * {
+    font-family: "PixelMplus12", monospace;
+  }
+
+.container {
+display: flex;
+/* height: 100vh; */
+}
+
+.left-col, .right-col {
+  width: 20%;       /* Smaller columns */
+  display: flex;
+  justify-content: center;
+
+}
+
+.middle-col {
+  flex: 1;          /* Middle column takes remaining space */
+  display: flex;
+  justify-content: center;
+}
+
+.max-width{
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .left-col,
+  .right-col {
+    display: none; /* Hide on small screens */
+  }
+
+  .middle-col {
+    width: 100%;   /* Fill entire width */
+  }
+
+  .container {
+    flex-direction: column; /* optional: stack if needed */
+  }
+}
+
+
+.hidden {
+  visibility: hidden;
+}
+
+
+.box-tittle {
+
+}
+
+.box-content{
+    padding: 1%;
+}
+
+
+.monospace {
+    font-family: "MonoNerd", monospace;
+}
+
+.color-nord0{
+  color: var(--nord0);
+}
+
+.color-nord1{
+  color: var(--nord1);
+}
+
+.color-nord2{
+  color: var(--nord2);
+}
+
+.color-nord3{
+  color: var(--nord3);
+}
+
+.color-nord4{
+  color: var(--nord4);
+}
+
+.color-nord5{
+  color: var(--nord5);
+}
+
+.color-nord6{
+  color: var(--nord6);
+}
+
+.color-nord7{
+  color: var(--nord7);
+}
+
+.color-nord8{
+  color: var(--nord8);
+}
+
+.color-nord9{
+  color: var(--nord9);
+}
+
+.color-nord10{
+  color: var(--nord10);
+}
+
+.color-nord11{
+  color: var(--nord11);
+}
+
+.color-nord12{
+  color: var(--nord12);
+}
+
+.color-nord13{
+  color: var(--nord13);
+}
+
+.color-nord14{
+  color: var(--nord14);
+}
+
+.color-nord15{
+  color: var(--nord15);
+}
