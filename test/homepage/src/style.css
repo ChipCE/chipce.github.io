@@ -12,60 +12,76 @@
 @import "@webtui/css/components/badge.css";
 @import "@webtui/css/components/popover.css";
 
-@import "@webtui/plugin-nf";
+
 @import '@webtui/theme-nord';
+@import "@webtui/plugin-nf";
 
 @font-face {
     font-family: "JetBrainsMonoNFM";
-    src: url("../public/0xProtoNerdFont-Regular.ttf") format("truetype");
+    src: url("/0xProtoNerdFont-Regular.ttf") format("truetype");
     font-stretch: normal;
     font-style: normal;
     font-weight: 400;
   }
   
-  @font-face {
-    font-family: "JetBrainsMonoNFM";
-    src: url("../public/0xProtoNerdFont-Regular.ttf") format("truetype");
-    font-stretch: normal;
-    font-style: normal;
-    font-weight: 700;
+@font-face {
+  font-family: "JetBrainsMonoNFM";
+  src: url("/0xProtoNerdFont-Regular.ttf") format("truetype");
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: 700;
+}
+
+body {
+  font-family: "JetBrainsMonoNFM", monospace;
+}
+  .container {
+    display: flex;
+    /* height: 100vh; */
+}
+
+.left-col, .right-col {
+  width: 20%;       /* Smaller columns */
+  display: flex;
+  justify-content: center;
+
+}
+
+.middle-col {
+  flex: 1;          /* Middle column takes remaining space */
+  display: flex;
+  justify-content: center;
+}
+
+.max-width{
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .left-col,
+  .right-col {
+    display: none; /* Hide on small screens */
+  }
+
+  .middle-col {
+    width: 100%;   /* Fill entire width */
   }
 
   .container {
-    display: flex;
-    height: 100vh;
+    flex-direction: column; /* optional: stack if needed */
   }
+}
 
-  .left, .right {
-    width: 20%;       /* Smaller columns */
-    display: flex;
-    justify-content: center;
 
-  }
+.hidden {
+  visibility: hidden;
+}
 
-  .middle {
-    flex: 1;          /* Middle column takes remaining space */
-    display: flex;
-    justify-content: center;
-  }
 
-  .max-width{
-    width: 100%;
-  }
+.box-tittle {
 
-  @media (max-width: 768px) {
-    .left,
-    .right {
-      display: none; /* Hide on small screens */
-    }
+}
 
-    .middle {
-      width: 100%;   /* Fill entire width */
-    }
-
-    .container {
-      flex-direction: column; /* optional: stack if needed */
-    }
-  }
-
-  /* style="visibility: hidden;" */
+.box-content{
+  
+}
