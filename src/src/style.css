@@ -56,7 +56,12 @@ font-weight: normal;
 font-style: normal;
 }
 
-
+@font-face {
+    font-family: "MonoNerd";
+    src: url("/fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    }
 
 
 html,body, * {
@@ -116,7 +121,7 @@ display: flex;
 
 
 .monospace {
-  font-family: monospace;
+  font-family: "MonoNerd", monospace;
 }
 
 .color-nord0{
