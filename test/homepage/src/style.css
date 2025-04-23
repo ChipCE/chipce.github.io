@@ -1,3 +1,5 @@
+
+
 @layer base, utils, components;
 
 /* @import "tailwindcss"; */
@@ -16,28 +18,30 @@
 @import '@webtui/theme-nord';
 @import "@webtui/plugin-nf";
 
-@font-face {
-    font-family: "JetBrainsMonoNFM";
-    src: url("/0xProtoNerdFont-Regular.ttf") format("truetype");
-    font-stretch: normal;
-    font-style: normal;
-    font-weight: 400;
-  }
+
   
 @font-face {
-  font-family: "JetBrainsMonoNFM";
-  src: url("/0xProtoNerdFont-Regular.ttf") format("truetype");
-  font-stretch: normal;
-  font-style: normal;
-  font-weight: 700;
+font-family: "PixelMplus12";
+src: url("/fonts/PixelMplus12-Regular.ttf") format("truetype");
+font-weight: normal;
+font-style: normal;
 }
 
-body {
-  font-family: "JetBrainsMonoNFM", monospace;
-}
-  .container {
-    display: flex;
-    /* height: 100vh; */
+@font-face {
+    font-family: "MonoNerd";
+    src: url("/fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    }
+
+
+html,body, * {
+    font-family: "PixelMplus12", monospace;
+  }
+
+.container {
+display: flex;
+/* height: 100vh; */
 }
 
 .left-col, .right-col {
@@ -83,5 +87,10 @@ body {
 }
 
 .box-content{
-  
+    
+}
+
+
+.monospace {
+    font-family: "MonoNerd", monospace;
 }
