@@ -56,12 +56,12 @@ font-weight: normal;
 font-style: normal;
 }
 
-@font-face {
-    font-family: "MonoNerd";
-    src: url("/fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-    }
+/* @font-face {
+  font-family: "MonoNerd";
+  src: url("/fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  } */
 
 
 html,body, * {
@@ -116,13 +116,17 @@ display: flex;
 }
 
 .box-content{
-    padding: 1%;
+    /* padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%; */
+    padding: 10px;
 }
 
 
-.monospace {
+/* .monospace {
   font-family: "MonoNerd", monospace;
-}
+} */
 
 .color-nord0{
   color: var(--nord0);
