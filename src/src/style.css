@@ -14,9 +14,9 @@
 @import "@webtui/css/components/badge.css";
 @import "@webtui/css/components/popover.css";
 
-
+@import '@webtui/plugin-nf';
 @import '@webtui/theme-nord';
-@import "@webtui/plugin-nf";
+
 
 
 @layer base {
@@ -44,6 +44,9 @@
     --nord13: #ebcb8b;
     --nord14: #a3be8c;
     --nord15: #b48ead;
+
+    --font-size: 18px;
+    --font-family: "JetBrainsMono", monospace, "Symbols Nerd Font";
   }
 }
 
@@ -56,17 +59,22 @@ font-weight: normal;
 font-style: normal;
 }
 
-/* @font-face {
+@font-face {
   font-family: "MonoNerd";
-  src: url("/fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+  src: url("/fonts/GohuFont11NerdFontMono-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  } */
+  }
 
 
 html,body, * {
-    font-family: "PixelMplus12", monospace;
+    font-family: "PixelMplus12", monospace, "MonoNerd";
   }
+
+
+.textCenter{
+  text-align: center;
+}
 
 .container {
 display: flex;
@@ -190,4 +198,10 @@ display: flex;
 
 .color-nord15{
   color: var(--nord15);
+}
+
+.icon {
+  font-family: 'MonoNerd', monospace;
+  font-size: 2.0rem; /* or any size you prefer */
+  vertical-align: middle; /* optional: aligns better with text */
 }
