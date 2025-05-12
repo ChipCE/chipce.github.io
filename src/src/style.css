@@ -246,8 +246,15 @@ li > details {
   justify-content: flex-end;
 }
 
+@media (max-width: 600px) {
+  .content-row {
+    flex-direction: column;
+  }  .section.image {
+    width: 100%; /* Let the image take full width */
+  }
+}
+
 .close-btn {
-  padding: 0.4rem 1rem;
   border: none;
   cursor: pointer;
 }
