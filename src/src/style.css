@@ -266,3 +266,22 @@ li > details {
   gap: 1rem;
   align-items: flex-start;
 }
+
+button.close-btn {
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.product-entry {
+  display: inline-block; /* keeps it on the same line as the marker */
+  width: 85%;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+ul {
+  list-style-position: inside;
+}
