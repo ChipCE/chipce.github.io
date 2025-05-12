@@ -1,0 +1,12 @@
+[
+    {
+      "name": "Filter for ABC",
+      "banner": "/img/air-filter.jpg",
+      "desc": "This is a sample description for Filter ABC."
+    },
+    {
+      "name": "Cooler for XYZ",
+      "banner": "/img/basket.jpg",
+      "desc": "High-efficiency cooler for XYZ units."
+    }
+  ]
