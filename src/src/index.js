@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     loadProductList("beat_productList");
+    loadProductList("miata_productList");
     loadProductList("other_productList");
     addCloseBtnAction();
 });
