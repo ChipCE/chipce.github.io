@@ -74,6 +74,11 @@
       "name": "キーホルダー・ポケット",
       "banner": "/img/products/key-holder.jpg",
       "desc": "ビート(PP1)純正キーの形に合わせて設計された専用キーホルダーです。片手で簡単にキーを取り出し、収納できる便利なアクセサリーです。"
+    },
+    {
+      "name": "排熱ダクト",
+      "banner": "/img/products/air-duct.jpg",
+      "desc": "エアホイールの形状で排熱穴周辺に負圧を発生させ、内部の熱気を効率的に吸い出す構造のダクトです。"
     }
   ],
   "miata_productList": [

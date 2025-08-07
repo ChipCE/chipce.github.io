@@ -310,3 +310,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+node_modules/
+src/node_modules/
+src/node_modules/*
