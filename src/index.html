@@ -16,7 +16,7 @@
   <div class="container">
 
     <div class="left-col hidden">
-      <div box-="square contain:!top" class="max-width">
+      <div box-="square" shear-="top" class="max-width">
         <div class="box-title">
           <span is-="badge" variant-="background0">Left-col</span>
         </div>
@@ -30,7 +30,7 @@
       <div class="max-width scrollable">
 
         <div class="container">
-          <div box-="square contain:!top" class="max-width scrollable">
+          <div box-="square" shear-="top" class="max-width scrollable">
             <div class="box-title">
               <a href="/"><span is-="badge" variant-="background0">
                   <h1><span class="icon">&#xf461;</span> SnakeOilDev.com</h1>
@@ -50,7 +50,7 @@
             </div>
           </div>
 
-          <div box-="square contain:!top" class="max-width">
+          <div box-="square" shear-="top" class="max-width">
             <div class="box-title">
               <span is-="badge" variant-="background0">
                 <h2 class="color-nord13"><span class="icon">&#xf2c0;</span> About me</h2>
@@ -72,7 +72,7 @@
 
         </div>
 
-        <div box-="square contain:!top" class="max-width">
+        <div box-="square" shear-="top" class="max-width">
           <div class="box-title">
             <span is-="badge" variant-="background0">
               <h2 class="color-nord13"><span class="icon">&#xf45f;</span> 新着情報 / News</h2>
@@ -80,6 +80,7 @@
           </div>
           <div class="box-content">
             <ul>
+              <li>[2026/04/03]:今年の<a href="https://www.meetthebeat.net/event/2026">Meet the beat2026</a>も<a href="https://x.com/capybaraXdeath">†まつりか†</a>様の協力をいただいて、サンプル品配布を実施します。</li>
               <li>[2025/07/08]:ロードスターパーツを追加しました。</li>
               <li>[2025/05/25]:<a href="http://www.meetthebeat.net/2025sanka.html">Meet the beat2025</a>で<a href="https://x.com/capybaraXdeath">†まつりか†</a>さんがサンプル配布をして頂くことになりました。欲しいかたはまつりかさんを捕まえてください。</li>
             </ul>
@@ -88,7 +89,7 @@
 
 
 
-        <div box-="square contain:!top" class="max-width">
+        <div box-="square" shear-="top" class="max-width">
           <div class="box-title">
             <span is-="badge" variant-="background0" class="text-cl">
               <h2 class="color-nord13"><span class="icon">&#xf0111;</span> 通販 / Online shop</h2>
@@ -96,7 +97,7 @@
           </div>
           <div class="box-content">
 
-            <div box-="square contain:!top">
+            <div box-="square" shear-="top">
               <div class="box-title">
                 <span is-="badge" variant-="background0" class="text-cl">
                   <!-- <h2 class="color-nord14"><span class="icon">&#xf07ac;</span> ホンダビート(PP1)パーツ</h2> -->
@@ -104,12 +105,12 @@
                 </span>
               </div>
               <div class="box-content">
-                <ul marker-="open tree" id="beat_productList">
-                </ul>
+                <div id="beat_productList" class="product-grid">
+                </div>
               </div>
             </div>
 
-            <div box-="square contain:!top">
+            <div box-="square" shear-="top">
               <div class="box-title">
                 <span is-="badge" variant-="background0" class="text-cl">
                   <!-- <h2 class="color-nord14"><span class="icon">&#xf07ac;</span> ロードスターパーツ</h2> -->
@@ -117,12 +118,12 @@
                 </span>
               </div>
               <div class="box-content">
-                <ul marker-="open tree" id="miata_productList">
-                </ul>
+                <div id="miata_productList" class="product-grid">
+                </div>
               </div>
             </div>
 
-            <div box-="square contain:!top">
+            <div box-="square" shear-="top">
               <div class="box-title">
                 <span is-="badge" variant-="background0" class="text-cl">
                   <!-- <h2 class="color-nord14"><span class="icon">&#xf1222;</span> その他/Other</h2> -->
@@ -130,12 +131,12 @@
                 </span>
               </div>
               <div class="box-content">
-                <ul marker-="open tree"  id="other_productList">
-                </ul>
+                <div id="other_productList" class="product-grid">
+                </div>
               </div>
             </div>
 
-            <div box-="square contain:!top">
+            <div box-="square" shear-="top">
               <div class="box-title">
                 <span is-="badge" variant-="background0" class="text-cl">
                   <h2 class="color-nord14"><span class="icon">&#xf11d5;</span> 現在出品している通販サイト</h2>
@@ -158,7 +159,7 @@
           </div>
         </div>
 
-        <div box-="square contain:!top" class="max-width">
+        <div box-="square" shear-="top" class="max-width">
           <div class="box-title">
             <span is-="badge" variant-="background0">
               <h2 class="color-nord13"><span class="icon">&#xf08e;</span> リンク / Links</h2>
@@ -206,14 +207,15 @@
             </ul>
           </div>
         </div>
-
-
+        <footer box-="square" class="site-footer textCenter">
+          <p>Copyright (c) SnakeOilDev. All rights reserved.</p>
+        </footer>
       </div>
     </div>
 
 
     <div class="right-col hidden">
-      <div box-="square contain:!top" class="max-width">
+      <div box-="square" shear-="top" class="max-width">
         <div class="box-title">
           <span is-="badge" variant-="background0">right-col</span>
         </div>
@@ -222,6 +224,22 @@
         </div>
       </div>
     </div>
+    <dialog id="productDialog" class="product-dialog" box-="square" position-="center center" size-="default">
+      <div class="product-dialog-title">
+        <span is-="badge" variant-="background0">
+          <span id="productDialogTitle"></span>
+        </span>
+      </div>
+      <div class="product-dialog-body">
+        <img id="productDialogImage" class="product-dialog-image" alt="" hidden>
+        <p id="productDialogDesc"></p>
+      </div>
+      <div class="product-dialog-actions">
+        <button id="productDialogClose" class="close-btn" type="button">
+          <span class="icon">&#xf102;</span> Close
+        </button>
+      </div>
+    </dialog>
 </body>
 
 </html>
