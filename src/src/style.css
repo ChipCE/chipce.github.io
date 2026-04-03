@@ -205,10 +205,14 @@ display: flex;
   display: grid;
   grid-template-columns: repeat(auto-fill, 180px);
   gap: 1rem;
-  justify-content: start;
+  justify-content: center;
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+.product-grid-container {
+  container-type: inline-size;
 }
 
 .product-card {
@@ -291,10 +295,19 @@ display: flex;
   justify-content: flex-end;
 }
 
+@container (max-width: 420px) {
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+  }
+}
+
 @media (max-width: 600px) {
   .content-row {
     flex-direction: column;
-  }  .section.image {
+  }
+
+  .section.image {
     width: 100%; /* Let the image take full width */
   }
 }
