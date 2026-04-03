@@ -25,8 +25,9 @@ function openProductDialog(product) {
     const title = document.getElementById("productDialogTitle");
     const desc = document.getElementById("productDialogDesc");
     const image = document.getElementById("productDialogImage");
+    const links = document.getElementById("productDialogLinks");
 
-    if (!dialog || !title || !desc || !image) {
+    if (!dialog || !title || !desc || !image || !links) {
       return;
     }
 
@@ -42,6 +43,34 @@ function openProductDialog(product) {
       image.removeAttribute("src");
       image.alt = "";
     }
+
+    links.innerHTML = "";
+    if (Array.isArray(product.links) && product.links.length > 0) {
+      const heading = document.createElement("p");
+      heading.className = "product-dialog-links-title";
+      heading.innerHTML = `<span class="icon">&#xf0337;</span> 関連リンク・開発メモ・Related links`;
+      links.appendChild(heading);
+
+      const list = document.createElement("ul");
+      list.className = "product-dialog-links-list";
+
+      product.links.forEach((url) => {
+        const item = document.createElement("li");
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.target = "_blank";
+        anchor.rel = "noreferrer noopener";
+        anchor.textContent = url;
+        item.appendChild(anchor);
+        list.appendChild(item);
+      });
+
+      links.appendChild(list);
+      links.hidden = false;
+    } else {
+      links.hidden = true;
+    }
+
     dialog.showModal();
 }
 

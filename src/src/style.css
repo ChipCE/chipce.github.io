@@ -3,17 +3,7 @@
 @layer base, utils, components;
 
 /* @import "tailwindcss"; */
-@import "@webtui/css/base.css";
-
-/* Utils */
-@import "@webtui/css/utils/box.css"; /*[!code ++]*/
-
-/* Components */
-@import "@webtui/css/components/button.css"; /*[!code ++]*/
-@import "@webtui/css/components/typography.css"; /*[!code ++]*/
-@import "@webtui/css/components/badge.css";
-@import "@webtui/css/components/dialog.css";
-@import "@webtui/css/components/popover.css";
+@import "@webtui/css";
 
 @import '@webtui/theme-nord';
 @import '@webtui/plugin-nf';
@@ -349,6 +339,20 @@ display: flex;
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
+}
+
+.product-dialog-links {
+  margin-top: 1rem;
+}
+
+.product-dialog-links-title {
+  margin-bottom: 0.5rem;
+}
+
+.product-dialog-links-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  overflow-wrap: anywhere;
 }
 
 .site-footer {
