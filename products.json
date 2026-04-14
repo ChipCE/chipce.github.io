@@ -1,6 +1,20 @@
 {
   "beat_productList": [
     {
+      "name": "ポリウレタン ドアウェッジ+スタビライザー",
+      "banner": "/img/products/COMING_SOON.jpg",
+      "desc": "COMING SOON",
+      "image": "",
+      "links": []
+    },
+    {
+      "name": "サンバイザー穴カバー",
+      "banner": "/img/products/beat-sun-visor-cover.jpg",
+      "desc": "サンバイザーを取り外した際、穴を埋めるためのパーツです。",
+      "image": "",
+      "links": []
+    },
+    {
       "name": "フォグランプスイッチスロット電圧計",
       "banner": "/img/products/beat-vol-meter.jpg",
       "desc": "ビートのフォグランプスイッチスロットに装着できる電圧計です。",
