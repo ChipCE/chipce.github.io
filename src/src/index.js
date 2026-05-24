@@ -45,33 +45,51 @@ function openProductDialog(product) {
     }
 
     links.innerHTML = "";
-    if (Array.isArray(product.links) && product.links.length > 0) {
-      const heading = document.createElement("p");
-      heading.className = "product-dialog-links-title";
-      heading.innerHTML = `<span class="icon">&#xf0337;</span> 関連リンク・開発メモ・Related links`;
-      links.appendChild(heading);
+    const hasDocs = Array.isArray(product.docs) && product.docs.length > 0;
+    const hasLinks = Array.isArray(product.links) && product.links.length > 0;
 
-      const list = document.createElement("ul");
-      list.className = "product-dialog-links-list";
-
-      product.links.forEach((url) => {
-        const item = document.createElement("li");
-        const anchor = document.createElement("a");
-        anchor.href = url;
-        anchor.target = "_blank";
-        anchor.rel = "noreferrer noopener";
-        anchor.textContent = url;
-        item.appendChild(anchor);
-        list.appendChild(item);
-      });
-
-      links.appendChild(list);
-      links.hidden = false;
-    } else {
-      links.hidden = true;
+    if (hasDocs) {
+      appendProductDialogLinks(
+        links,
+        product.docs,
+        `<span class="icon">&#xf02d;</span> ドキュメント・Docs`
+      );
     }
 
+    if (hasLinks) {
+      appendProductDialogLinks(
+        links,
+        product.links,
+        `<span class="icon">&#xf0337;</span> 関連リンク・開発メモ・Related links`
+      );
+    }
+
+    links.hidden = !(hasDocs || hasLinks);
+
     dialog.showModal();
+}
+
+function appendProductDialogLinks(container, urls, titleHtml) {
+    const heading = document.createElement("p");
+    heading.className = "product-dialog-links-title";
+    heading.innerHTML = titleHtml;
+    container.appendChild(heading);
+
+    const list = document.createElement("ul");
+    list.className = "product-dialog-links-list";
+
+    urls.forEach((url) => {
+      const item = document.createElement("li");
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.target = "_blank";
+      anchor.rel = "noreferrer noopener";
+      anchor.textContent = url;
+      item.appendChild(anchor);
+      list.appendChild(item);
+    });
+
+    container.appendChild(list);
 }
 
 function loadProductList(categoryName){

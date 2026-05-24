@@ -1,10 +1,19 @@
 {
   "beat_productList": [
     {
+      "name": "カセットスロット　スマホホルダーベース",
+      "banner": "/img/products/beat-cassette-phone-holder.jpg",
+      "desc": "純正オーディオのカセットテープスロットに装着するスマホホルダーベースです。17mmボールに取り付けるタイプのスマホホルダーであれば使用できます。",
+      "image": "",
+      "docs" : ["/doc/products/beat-cassette-phone-holder.pdf"],
+      "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13945028/parts.aspx"]
+    },
+    {
       "name": "ポリウレタン ドアウェッジ+スタビライザー",
       "banner": "/img/products/beat-door-stopper.jpg",
       "desc": "ポリウレタン製のドアウェッジとスタビライザーです。車体とドアの金属同士の接触の代わりにポリウレタンの弾力性を利用し、剛性を維持しながらドアヒンジへの負担を減らしますの考え方で設計しました。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/8611669/note.aspx"]
     },
     {
@@ -12,6 +21,7 @@
       "banner": "/img/products/beat-sun-visor-cover.jpg",
       "desc": "サンバイザーを取り外した際、穴を埋めるためのパーツです。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -19,6 +29,7 @@
       "banner": "/img/products/beat-vol-meter.jpg",
       "desc": "ビートのフォグランプスイッチスロットに装着できる電圧計です。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13804383/parts.aspx"]
     },
     {
@@ -26,13 +37,15 @@
       "banner": "/img/products/beat-top-lock-damper.jpg",
       "desc": "幌ロックのガタ対策はシリコン製が定番ですが、柔らかすぎてすぐ潰れてしまいます。硬すぎず、柔らかすぎず、耐久性に優れたポリウレタン素材で製作します。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13804371/parts.aspx"]
     },
     {
-      "name": "スマホホルダー・カードホルダー・メディアボタン",
-      "banner": "/img/products/beat-smartphone-holder.jpg",
-      "desc": "純正オーディオのカセットテープスロットに装着するパーツです。メディア操作ボタン、カードホルダーなどの3バージョンを用意しています。",
+      "name": "メディアボタン・カードホルダー",
+      "banner": "/img/products/beat-media-button.jpg",
+      "desc": "純正オーディオのカセットテープスロットに装着するパーツです。Blutoothメディア操作ボタンのベースとカードホルダー(横のバーはカードホルダーとして使用でき、駐車券や領収書などの収納に便利です)。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13610546/parts.aspx"]
     },
     {
@@ -40,6 +53,7 @@
       "banner": "/img/products/beat-plug-cord-holder.jpg",
       "desc": "純正品が廃番になったので、作ってみました。7mmスパークプラグコード用ホルダーです。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -47,6 +61,7 @@
       "banner": "/img/products/beat-air-filter.jpg",
       "desc": "ビートのエアコン吸気口形状にあわせて専用設計したエアコンエアーフィルターです。</br>・外気導入時に花粉、黄砂、ゴミなどの侵入を防ぎ、エバポレーターの汚れを予防します。</br>・ 工具なしで取り付けれます。</br>・エスティジェイ社製 SFC空調フィルターを採用します。水洗いで数回再使用できるタイプです。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -54,6 +69,7 @@
       "banner": "/img/products/beat-aircon-lid.jpg",
       "desc": "ビートの左右のエアコン吹き出し口用の蓋です。</br>ビートのエアコン吹き出し口は完全には閉じられないため、この蓋を使って閉じます。両端の吹き出し口をふさぐことで、中央の吹き出し口からの風量を増やすことを狙っています。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -61,6 +77,7 @@
       "banner": "/img/products/beat-tape-tray.jpg",
       "desc": "ビート助手席の間にあるカセットテープ入れスペースを小物入れ化のトレー・アダプターです。</br>下受けトレー&中段トレーセットになります。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -68,6 +85,7 @@
       "banner": "/img/products/beat-oil-cap.jpg",
       "desc": "純正エンジンオイルキャップの水たまり対策です。工具なしで取り付けれます。紫外線や熱に強いASA素材を使用しています。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -75,6 +93,7 @@
       "banner": "/img/products/beat-ash-tray.jpg",
       "desc": "ビート純正オプション灰皿スロット用の小物入れです。</br>・2段構造になっており、上の段は小銭入れが付いています。</br>・純正灰皿の寸法を参考に設計しているため、工具不要で取り付けでき、ガタつきも少ないです。（灰皿が付いていないビートの場合、古いトレーを切り落とす必要があります）</br>・紫外線や熱に強いASA素材を使用しています。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/7936241/note.aspx"]
     },
     {
@@ -82,6 +101,7 @@
       "banner": "/img/products/beat-wind-braker.jpg",
       "desc": "ビートにMR-Sの ウィンドディフレクターを取り付ける時のカバーです。</br>・パーツ強度や走行中の振動にガタを考慮した設計です。</br>・紫外線や熱に強いASA素材を使用しています。</br>・中央部カバー1個とマウント部カバー2個セットです。</br>",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -89,6 +109,7 @@
       "banner": "/img/products/beat-trunk-hole.jpg",
       "desc": "ビートトランク肉抜き穴のカバーです。</br>さまざまな実験を経てたどり着いた形状です。肉抜き穴から雨水が入らないようにしつつ、通気性を保ちます。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/7971244/note.aspx"]
     },
     {
@@ -96,6 +117,7 @@
       "banner": "/img/products/beat-cup-holder.jpg",
       "desc": "カーメイト製折りたたみドリンクホルダー(DZ530/DZ531/DZ581)をビートのセンターコンソールに取り付けるためのアダプターです。</br>・純正ネジの位置を再利用するため、無加工で取り付けが可能です。</br>・助手席を前方にスライドしても干渉しません。</br>・軽量のコンビニフックが付属しています。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13254679/parts.aspx"]
     },
     {
@@ -103,6 +125,7 @@
       "banner": "/img/products/beat-eacv-adapter.jpg",
       "desc": "ビート（PP1）に36450-P2J-J01 EACV 取り付けアダプターです。</br>さまざまな実験や測定の結果、ビートに 36450-P2J-J01 EACV を取り付けられることがわかりました。</br>※36450-P2J-J01 はシビック用の EACV のため、ビートに使用するには調整が必要です。個人で 1 時間程度で調整可能です。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3641414/8041196/note.aspx",
         "https://minkara.carview.co.jp/userid/3441256/car/3641414/8051719/note.aspx",
@@ -118,6 +141,7 @@
       "banner": "/img/products/beat-trunk-basket.jpg",
       "desc": "ビートトランクの左角に合わせて設計したバケツです。</br>小物や水漏れやすいモノ用？",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -125,6 +149,7 @@
       "banner": "/img/products/beat-kaoru-rf.jpg",
       "desc": "ビートのカオルトップ固定フックを付ける部分の補修パーツです。</br>もう純正新品が買えないので、コミュニティ応援価格で出品します。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -132,6 +157,7 @@
       "banner": "/img/products/beat-piggy-bank.jpg",
       "desc": "ビート乗りならおそらく誰もが持っているであろう、古いデスビキャップを貯金箱にするための蓋です。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13370918/parts.aspx"]
     },
     {
@@ -139,6 +165,7 @@
       "banner": "/img/products/beat-light-holder.jpg",
       "desc": "ホンダビート(PP1)の小径非常信号灯ホルダーです。</br>純正ホルダーの位置に取り付けれます。</br>・シングルバージョン:非常信号灯ホルダーのみ</br>・ダブルバージョン:非常信号灯+懐中電灯ホルダー。",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -146,6 +173,7 @@
       "banner": "/img/products/beat-air-duct.jpg",
       "desc": "エアホイールの形状で排熱穴周辺に負圧を発生させ、内部の熱気を効率的に吸い出す構造のダクトです。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3641414/8289403/note.aspx",
         "https://minkara.carview.co.jp/userid/3441256/car/3641414/8291030/note.aspx",
@@ -157,6 +185,7 @@
       "banner": "/img/products/beat-key-holder.jpg",
       "desc": "ビート(PP1)純正キーの形に合わせて設計された専用キーホルダーです。片手で簡単にキーを取り出し、収納できる便利なアクセサリーです。",
       "image": "",
+      "docs" : [],
       "links": []
     }
   ],
@@ -166,6 +195,7 @@
       "banner": "/img/products/miata-key.jpg",
       "desc": "純正キーのレプリカです。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3751576/13528410/parts.aspx"
       ]
@@ -175,6 +205,7 @@
       "banner": "/img/products/miata-key-holder.jpg",
       "desc": "純正キーの形に合わせて設計された専用キーケースです。片手で簡単にキーを取り出し、収納できる便利なアクセサリーです。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3751576/13528413/parts.aspx"
       ]
@@ -184,6 +215,7 @@
       "banner": "/img/products/miata-smartphone-holder-a.jpg",
       "desc": "助手席のルームランプ部分に取り付けます。ボルトオン設計のため、穴あけ加工は不要です。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3751576/13568177/parts.aspx"
       ]
@@ -193,6 +225,7 @@
       "banner": "/img/products/miata-smartphone-holder-b.jpg",
       "desc": "センターパネル形状を利用してに取り付けます。ポン付けで、穴あけ加工や両面テープは不要です。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3751576/13598817/parts.aspx"
       ]
@@ -202,6 +235,7 @@
       "banner": "/img/products/miata-smartphone-holder-c.jpg",
       "desc": "センターパネル形状を利用してに取り付けます。ポン付けで、穴あけ加工や両面テープは不要です。",
       "image": "",
+      "docs" : [],
       "links": [
         "https://minkara.carview.co.jp/userid/3441256/car/3751576/13611222/parts.aspx"
       ]
@@ -211,6 +245,7 @@
       "banner": "/img/products/miata-cup-holder.jpg",
       "desc": "カーメイト製折りたたみドリンクホルダー(DZ530/DZ531/DZ581)をロードスターのセンターコンソールに取り付けるためのアダプターです。</br>・純正穴の位置を再利用するため、無加工で取り付けが可能です。</br>・助手席を前方にスライドしても干渉しません。</br>・軽量のコンビニフックが付属しています。",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3751576/13912017/parts.aspx"]
     },
     {
@@ -218,6 +253,7 @@
       "banner": "/img/products/COMING_SOON.jpg",
       "desc": "COMING SOON",
       "image": "",
+      "docs" : [],
       "links": []
     },
     {
@@ -225,6 +261,7 @@
       "banner": "/img/products/COMING_SOON.jpg",
       "desc": "COMING SOON",
       "image": "",
+      "docs" : [],
       "links": []
     }
   ],
@@ -234,6 +271,7 @@
       "banner": "/img/products/other-acty-sticker.jpg",
       "desc": "ビート風アクティ／アクティバン用のミッドシップロゴステッカー",
       "image": "",
+      "docs" : [],
       "links": ["https://minkara.carview.co.jp/userid/3441256/car/3641414/13540599/parts.aspx"]
     },
     {
@@ -241,6 +279,7 @@
       "banner": "/img/products/other_lithophane.jpg",
       "desc": "ライト付き、立体写真スタンドで。送っていただいた写真で作成いたします。",
       "image": "",
+      "docs" : [],
       "links": ["https://snakeoildev.booth.pm/items/7222307"]
     }
   ]
