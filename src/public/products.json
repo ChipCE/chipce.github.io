@@ -1,6 +1,14 @@
 {
   "beat_productList": [
     {
+      "name": "スマホホルダーアダプター",
+      "banner": "/img/products/COMING_SOON.jpg",
+      "desc": "COMING SOON",
+      "image": "",
+      "docs" : [],
+      "links": []
+    },
+    {
       "name": "給油口ベロ",
       "banner": "/img/products/beat-gas-cover.jpg",
       "desc": "給油時のボディへのキズを防止するグッズです。",
