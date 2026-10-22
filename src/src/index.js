@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     setupProductDialog();
     loadProductList("beat_productList");
+    loadProductList("cappuccino_productList");
     loadProductList("miata_productList");
     loadProductList("other_productList");
 });
