@@ -1,6 +1,14 @@
 {
   "beat_productList": [
     {
+      "name": "給油口ベロ",
+      "banner": "/img/products/beat-gas-cover.jpg",
+      "desc": "給油時のボディへのキズを防止するグッズです。",
+      "image": "",
+      "docs" : [],
+      "links": []
+    },
+    {
       "name": "カセットスロット　スマホホルダーベース",
       "banner": "/img/products/beat-cassette-phone-holder.jpg",
       "desc": "純正オーディオのカセットテープスロットに装着するスマホホルダーベースです。17mmボールに取り付けるタイプのスマホホルダーであれば使用できます。",
@@ -189,6 +197,49 @@
       "links": []
     }
   ],
+  "cappuccino_productList": [
+    {
+      "name": "スマホホルダーアダプター",
+      "banner": "/img/products/chino-phone-holder.jpg",
+      "desc": "メーター左側の空いているスイッチスロットに取り付けれスマホホルダーアダプターです。",
+      "image": "",
+      "docs" : [],
+      "links": ["https://minkara.carview.co.jp/smart/userid/3441256/car/3910211/14117786/parts.aspx"]
+    },
+    {
+      "name": "エアコンルーバー補修キット",
+      "banner": "/img/products/chino-aircon-vent.jpg",
+      "desc": "定番エアコンルーバー故障の補修パーツです",
+      "image": "",
+      "docs" : [],
+      "links": ["https://minkara.carview.co.jp/smart/userid/3441256/car/3910211/8808354/note.aspx"]
+    },
+    {
+      "name": "サンバイザー穴カバー",
+      "banner": "/img/products/COMING_SOON.jpg",
+      "desc": "COMING SOON",
+      "image": "",
+      "docs" : [],
+      "links": []
+    },
+    {
+      "name": "電圧計",
+      "banner": "/img/products/COMING_SOON.jpg",
+      "desc": "COMING SOON",
+      "image": "",
+      "docs" : [],
+      "links": []
+    },
+    {
+      "name": "ドリンクホルダー",
+      "banner": "/img/products/COMING_SOON.jpg",
+      "desc": "COMING SOON",
+      "image": "",
+      "docs" : [],
+      "links": []
+    }
+  ],
+
   "miata_productList": [
     {
       "name": "ユーノス　ブランクキー　レプリカ",

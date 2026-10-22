@@ -314,3 +314,11 @@ cython_debug/
 node_modules/
 src/node_modules/
 src/node_modules/*
+
+# Scratch files
+tmp/
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
