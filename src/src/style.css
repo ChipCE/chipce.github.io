@@ -324,6 +324,10 @@ display: flex;
 
 .product-dialog-body {
   margin-top: 1rem;
+  /* scroll long content inside the body so the close button stays visible */
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .product-dialog-image {
