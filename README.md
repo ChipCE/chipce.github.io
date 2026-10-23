@@ -48,6 +48,20 @@ pip install -r requirements.txt
 python subset-fonts.py
 ```
 
+## Product images
+
+Camera photos are 1 MB+ each. After adding new images, shrink anything over 300 KB to
+max 1280 px (also strips EXIF, e.g. GPS):
+
+```
+cd src/python
+python compress-images.py --dry-run     # list what would change
+python compress-images.py               # src/public/img/products by default
+```
+
+Files are overwritten in place; the originals are copied to `tmp/img-originals/` (git-ignored).
+Already-small files are skipped, so it is safe to re-run.
+
 ## Publishing
 
 ```
